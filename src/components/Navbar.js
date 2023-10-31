@@ -3,12 +3,12 @@ import { Link } from 'gatsby'
 
 export default function Navbar() {
   return (
-    <nav>
-      <h1>Web Warrior</h1>
+    <nav className="p-4 flex justify-between items-center">
+      <h1 className="text-2xl font-semibold">Noah Kittinger</h1>
       <div className="links">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/projects">Portfolio Projects</Link>
+        <Link to="/" className="mr-4 hover:underline">Music</Link>
+        <Link to="/about" className="mr-4 hover:underline">About</Link>
+        <Link to="/projects" className="hover:underline">Contact</Link>
       </div>
     </nav>
   )
