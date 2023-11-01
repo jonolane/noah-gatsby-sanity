@@ -4,10 +4,20 @@ import Footer from './Footer'
 
 export default function Layout({ children }) {
   return (
-    <div className="layout bg-gray-800 text-white">
+    <div className="layout bg-white text-black">
+      <head>
+        {/* Kalam */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet" />
+        {/* Unifraktur */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+          <link href="https://fonts.googleapis.com/css2?family=Kalam&family=UnifrakturMaguntia&display=swap" rel="stylesheet" />
+      </head>
       <Navbar />
       <div className="content">
-        { children }
+        {children}
       </div>
       <Footer />
     </div>

@@ -5,7 +5,12 @@ module.exports = {
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        kalam: ['Kalam', 'Kalam'],
+        uni: ['UnifrakturMaguntia', 'UnifrakturMaguntia'],
+      },
+    },
   },
   plugins: [],
 }
