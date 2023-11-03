@@ -5,9 +5,9 @@ import { StaticImage } from 'gatsby-plugin-image';
 const About = ({ data }) => {
   return (
     <Layout>
-      <div className="flex flex-col md:flex-row items-center justify-center h-full">
+      <div className="flex flex-col md:flex-row items-start pb-4 px-10 pt-8">
 
-        <div className="md:w-1/2 py-4 px-8">
+        <div className="md:w-1/2 mr-10 tracking-wider">
           <h1 className="text-3xl font-bold mb-4">Hi! I’m Noah</h1>
           <p className="mb-4">
             I’m an Asheville-based music person. I tend to wear a ton of different hats, and I’m completely fine with that. Every day working on music feels a little different and exciting. I am endlessly thankful to others for trusting my hands and ears on their art.
@@ -27,11 +27,11 @@ const About = ({ data }) => {
         </div>
 
 
-        <div className="md:w-1/2 p-4 flex items-center justify-center">
+        <div className="md:w-1/2 flex items-center justify-center">
           <StaticImage // Use StaticImage instead of Img
             src="../images/noah-kitt.jpg" // Update the path to the image
             alt="Profile"
-            width={400}
+            width={500}
             quality={95} // You can adjust the image quality
             formats={['auto', 'webp', 'avif']} // Support multiple formats
           />
