@@ -7,10 +7,13 @@ const About = ({ data }) => {
     <Layout>
       <div className="flex flex-col md:flex-row items-start pb-4 px-10 pt-8">
 
-        <div className="md:w-1/2 mr-10 tracking-wider">
+        <div className="md:w-1/2 mr-10 tracking-widest font-poppins">
           <h1 className="text-3xl font-bold mb-4">Hi! I’m Noah</h1>
+          <h2 className='mb-4 text-lg'>
+            I’m an Asheville-based music person.
+          </h2>
           <p className="mb-4">
-            I’m an Asheville-based music person. I tend to wear a ton of different hats, and I’m completely fine with that. Every day working on music feels a little different and exciting. I am endlessly thankful to others for trusting my hands and ears on their art.
+            I tend to wear a ton of different hats, and I’m completely fine with that. Every day working on music feels a little different and exciting. I am endlessly thankful to others for trusting my hands and ears on their art.
           </p>
           <p className="mb-4">
             My primary instruments for remote overdubs are bass and pedal steel, though I have done remote overdubs with plenty of other instruments and am open to continuing to do that.
@@ -31,7 +34,7 @@ const About = ({ data }) => {
           <StaticImage // Use StaticImage instead of Img
             src="../images/noah-kitt.jpg" // Update the path to the image
             alt="Profile"
-            width={500}
+            width={600}
             quality={95} // You can adjust the image quality
             formats={['auto', 'webp', 'avif']} // Support multiple formats
           />

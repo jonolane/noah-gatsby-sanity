@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         kalam: ['Kalam', 'Kalam'],
         uni: ['UnifrakturMaguntia', 'UnifrakturMaguntia'],
+        poppins: ['Poppins', 'Poppins']
       },
     },
   },
