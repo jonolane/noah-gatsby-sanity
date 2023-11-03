@@ -6,7 +6,7 @@ export default function Footer() {
     return (
         <footer className="p-10">
             <div className="container mx-auto flex flex-col items-center justify-center">
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 py-4">
                     <a href="https://www.instagram.com/kittinger.noah/" className="text-xl">
                         <FontAwesomeIcon icon={faInstagram} style={{ color: '#000000' }} />
                     </a>
