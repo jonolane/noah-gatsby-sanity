@@ -5,92 +5,94 @@ import { StaticImage } from 'gatsby-plugin-image';
 const Contact = () => {
   return (
     <Layout>
-      <div className="flex flex-col md:flex-row items-start mx-4 md:mx-auto">
+      <div className="flex flex-col md:flex-row items-start px-10 md:mx-auto">
         {/* Left Column */}
         <div className="md:w-1/2 py-4 px-8">
           <StaticImage
             src="../images/bedroom.jpg"
             alt="Bedroom"
+            width={600}
+            quality={95} // You can adjust the image quality
+            formats={['auto', 'webp', 'avif']} // Support multiple formats
           />
-          <p className="mt-4 tracking-widest font-poppins">
+          <div className="mt-4 tracking-wider font-poppins">
+            <p className='mb-4'>
             Every project requires its own approach, and I would be honored to be involved in whatever capacity you’d like for me to be.
-            <br />
+            </p>
+            <p className='mb-4'>
             Fill out the form so I can familiarize myself with your project’s details. From there, I can provide you a quote and we can discuss a general timeline.
-            <br />
+            </p>
+            <p className='mb-4'>
             Happy to just talk gear or just lend an ear also.
-            <br />
+            </p>
+            <p className='mb-4'>
             FYI— Replies to these almost always go to spam. If you haven’t heard from me after a day or two, please reach out on Instagram or double-check the spam folder :)
-          </p>
+            </p>
+          </div>
         </div>
         {/* Right Column */}
         <div className="md:w-1/2 p-4">
-          <form className="bg-white p-4 rounded-none">
+          <form className="bg-white p-4 rounded-none tracking-wider">
             <div className="mb-4">
-              <label htmlFor="name" className="block text-sm font-poppins">Name (required)</label>
+              <label htmlFor="name" className="block text-sm font-poppins pb-2">Name (required)</label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                className="w-full p-2 border border-gray-400 bg-slate-50"
+                className="w-full p-2 border border-gray-400 bg-gray-50"
                 required
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-poppins">Email Address (required)</label>
+              <label htmlFor="email" className="block text-sm font-poppins pb-2">Email Address (required)</label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                className="w-full p-2 border border-gray-400 bg-slate-50"
+                className="w-full p-2 border border-gray-400 bg-gray-50"
                 required
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="project" className="block text-sm font-poppins">Project Name (required)</label>
+              <label htmlFor="project" className="block text-sm font-poppins pb-2">Project Name (required)</label>
               <input
                 type="text"
                 id="project"
                 name="project"
-                className="w-full p-2 border border-gray-400 bg-slate-50"
+                className="w-full p-2 border border-gray-400 bg-gray-50"
                 required
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="service" className="block text-sm font-poppins">Service Requested (required)</label>
-              <select
+              <label htmlFor="service" className="block text-sm font-poppins pb-2">Service Requested (required)</label>
+              <input
+                type='text'
                 id="service"
                 name="service"
-                className="w-full p-2 border border-gray-400 bg-slate-50"
+                className="w-full p-2 border border-gray-400 bg-gray-50"
                 required
-              >
-                <option value="" disabled selected>Select an option</option>
-                <option value="mixing">Mixing</option>
-                <option value="overdubbing">Overdubbing</option>
-                <option value="mastering">Mastering</option>
-                <option value="producing">Producing</option>
-                <option value="collaboration">Other collaboration</option>
-              </select>
-              <p className="text-xs mt-2">Mixing, Overdubbing, Mastering, Producing, or other collaboration</p>
+              />
+              <p className="text-sm mt-2">Mixing, Overdubbing, Mastering, Producing, or other collaboration</p>
             </div>
             <div className="mb-4">
-              <label htmlFor="songs" className="block text-sm font-poppins">How many songs? (required)</label>
+              <label htmlFor="songs" className="block text-sm font-poppins pb-2">How many songs? (required)</label>
               <input
                 type="number"
                 id="songs"
                 name="songs"
-                className="w-full p-2 border border-gray-400 bg-slate-50"
+                className="w-full p-2 border border-gray-400 bg-gray-50"
                 required
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="notes" className="block text-sm font-poppins">Notes (required)</label>
+              <label htmlFor="notes" className="block text-sm font-poppins pb-2">Notes (required)</label>
               <textarea
                 id="notes"
                 name="notes"
-                className="w-full p-2 border border-gray-400 bg-slate-50"
+                className="w-full p-2 border border-gray-400 bg-gray-50"
                 required
               ></textarea>
-              <p className="text-xs mt-2">Tell me about yourself, the project, link to demos, favorite breakfast food, etc</p>
+              <p className="text-sm mt-2">Tell me about yourself, the project, link to demos, favorite breakfast food, etc</p>
             </div>
             <button className="bg-black text-white py-2 px-4 rounded-none">Send</button>
           </form>

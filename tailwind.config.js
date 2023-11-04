@@ -11,6 +11,11 @@ module.exports = {
         uni: ['UnifrakturMaguntia', 'UnifrakturMaguntia'],
         poppins: ['Poppins', 'Poppins']
       },
+      colors: {
+        gray: {
+          50: '#fcfcfc'
+        }
+      }
     },
   },
   plugins: [],
