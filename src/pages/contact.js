@@ -32,7 +32,13 @@ const Contact = () => {
         </div>
         {/* Right Column */}
         <div className="md:w-1/2 p-4">
-          <form className="bg-white p-4 rounded-none tracking-wider">
+
+          {/* method, action, access_key are all Web3Forms framework */}
+
+          <form className="bg-white p-4 rounded-none tracking-wider" action='https://api.web3forms.com/submit' method='POST'>
+
+            <input type="hidden" name='access_key' value='246f51fb-fee2-4610-8fd2-aba2ec308f2d' />
+
             <div className="mb-4">
               <label htmlFor="name" className="block text-sm font-poppins pb-2">Name (required)</label>
               <input
@@ -94,7 +100,7 @@ const Contact = () => {
               ></textarea>
               <p className="text-sm mt-2">Tell me about yourself, the project, link to demos, favorite breakfast food, etc</p>
             </div>
-            <button className="bg-black text-white py-2 px-4 rounded-none">Send</button>
+            <button className="bg-black text-white py-2 px-4 rounded-none" type='submit'>Send</button>
           </form>
         </div>
       </div>
