@@ -22,7 +22,8 @@
     "gatsby-source-filesystem": "^5.12.1",
     "gatsby-transformer-sharp": "^5.12.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "spotify-web-api-js": "^1.5.2"
   },
   "repository": {
     "type": "git",
