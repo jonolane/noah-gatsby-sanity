@@ -49,6 +49,12 @@ export default {
             maxLength: 96,
         },
         description: 'just hit generate here, it populates a unique url domain tag for each release = )'
+      },
+      {
+        name: 'singleTrack',
+        title: 'Single Track?',
+        type: 'boolean',
+        description: 'Check this box only if this is a single track release. If it is multiple tracks on an album, pick false so that we use the album cover art'
       }
     ]
   }

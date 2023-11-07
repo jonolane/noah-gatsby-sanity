@@ -6,12 +6,10 @@ const CLIENT_ID = 'd4d80ce37254416a8a1bd23ffb4681ea';
 const CLIENT_SECRET = '395ec27481fe4de0ad5d8939d7aba84e';
 
 export default function Home() {
-  const [spotifyApi, setSpotifyApi] = useState(null);
   const [albumCover, setAlbumCover] = useState(null);
 
   useEffect(() => {
     const api = new SpotifyWebApi();
-    setSpotifyApi(api);
 
     const requestOptions = {
       method: 'POST',
@@ -62,5 +60,5 @@ export default function Home() {
         )}
       </section>
     </Layout>
-  )
+  );
 }
