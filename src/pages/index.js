@@ -5,24 +5,30 @@ import { authenticate } from '../utils/spotifyAuth';
 export default function Home() {
   const [albumCover, setAlbumCover] = useState(null);
 
+  // authenticate 
   useEffect(() => {
     authenticate().then((api) => {
-      const spotifyUrl = 'https://open.spotify.com/album/42wtQWKJgputaha9JSKWGJ?si=AyjFXxR-SZiYPriSP34sUg';
-      const albumIdMatch = spotifyUrl.match(/album\/(\w+)/);
-      const albumId = albumIdMatch ? albumIdMatch[1] : null;
-
-      if (albumId) {
-        api.getAlbum(albumId).then(
-          function(data) {
-            setAlbumCover(data.images[0].url);
-          },
-          function(err) {
-            console.error(err);
-          }
-        );
-      }
+      getAlbumCover(api);
     }).catch((error) => console.error(error));
   }, []);
+
+  // get album cover
+  function getAlbumCover(api) {
+    const spotifyUrl = 'https://open.spotify.com/album/42wtQWKJgputaha9JSKWGJ?si=AyjFXxR-SZiYPriSP34sUg';
+    const albumIdMatch = spotifyUrl.match(/album\/(\w+)/);
+    const albumId = albumIdMatch ? albumIdMatch[1] : null;
+
+    if (albumId) {
+      api.getAlbum(albumId).then(
+        function(data) {
+          setAlbumCover(data.images[0].url);
+        },
+        function(err) {
+          console.error(err);
+        }
+      );
+    }
+  }
 
   return (
     <Layout>
