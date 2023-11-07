@@ -21,6 +21,8 @@ export default {
         title: 'Work Done',
         description: 'i.e. "Mixing", "Production", "Mix / Production"'
       },
+
+      /*
       {
         name: 'coverArt',
         title: 'Cover Art',
@@ -29,10 +31,13 @@ export default {
             hotspot: true,
         },
       }, 
+      */
+
       {
         name: 'spotityLink',
         title: 'Spotify Link',
-        type: 'url'
+        type: 'url',
+        description: 'has to be an album or track url or cover art image will not load. also if it is a single track, make sure "track" is selected at the bottom'
       },
       {
         name: 'year',
