@@ -15,7 +15,14 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem', // using for static about and contact images
       options: {
         name: 'images',
         path: `${__dirname}/src/images/`,
