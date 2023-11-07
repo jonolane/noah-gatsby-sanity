@@ -1,49 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
-import SpotifyWebApi from 'spotify-web-api-js';
-
-const CLIENT_ID = 'd4d80ce37254416a8a1bd23ffb4681ea';
-const CLIENT_SECRET = '395ec27481fe4de0ad5d8939d7aba84e';
+import { authenticate } from '../utils/spotifyAuth';
 
 export default function Home() {
   const [albumCover, setAlbumCover] = useState(null);
 
   useEffect(() => {
-    const api = new SpotifyWebApi();
+    authenticate().then((api) => {
+      const spotifyUrl = 'https://open.spotify.com/album/42wtQWKJgputaha9JSKWGJ?si=AyjFXxR-SZiYPriSP34sUg';
+      const albumIdMatch = spotifyUrl.match(/album\/(\w+)/);
+      const albumId = albumIdMatch ? albumIdMatch[1] : null;
 
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        Authorization: 'Basic ' + btoa(CLIENT_ID + ':' + CLIENT_SECRET),
-      },
-      body: new URLSearchParams({
-        grant_type: 'client_credentials',
-      }),
-    };
-
-    fetch('https://accounts.spotify.com/api/token', requestOptions)
-      .then((response) => response.json())
-      .then((data) => {
-        const access_token = data.access_token;
-        api.setAccessToken(access_token);
-
-        const spotifyUrl = 'https://open.spotify.com/album/42wtQWKJgputaha9JSKWGJ?si=AyjFXxR-SZiYPriSP34sUg';
-        const albumIdMatch = spotifyUrl.match(/album\/(\w+)/);
-        const albumId = albumIdMatch ? albumIdMatch[1] : null;
-
-        if (albumId) {
-          api.getAlbum(albumId).then(
-            function(data) {
-              setAlbumCover(data.images[0].url);
-            },
-            function(err) {
-              console.error(err);
-            }
-          );
-        }
-      })
-      .catch((error) => console.error(error));
+      if (albumId) {
+        api.getAlbum(albumId).then(
+          function(data) {
+            setAlbumCover(data.images[0].url);
+          },
+          function(err) {
+            console.error(err);
+          }
+        );
+      }
+    }).catch((error) => console.error(error));
   }, []);
 
   return (
