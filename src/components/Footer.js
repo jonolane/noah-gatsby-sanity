@@ -18,7 +18,7 @@ export default function Footer() {
                     </a>
                     {/* Add more social media icons as needed */}
                 </div>
-                <p className="font-semibold text-center mb-2 font-uni">Created with love by Jono Lane</p>
+                <p className="font-semibold text-center mb-2 font-uni">✨ Created with 💗 by Jono Lane ✨</p>
             </div>
         </footer>
     )
