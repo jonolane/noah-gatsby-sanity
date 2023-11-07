@@ -59,7 +59,7 @@ export default {
         name: 'singleTrack',
         title: 'Single Track?',
         type: 'boolean',
-        description: 'Check this box only if this is a single track release. If it is multiple tracks on an album, pick false so that we use the album cover art'
+        description: 'Check this box only if this is a single track release. even if it is multiple tracks on an album, if it is not the full album pick false so that we use the album cover art'
       }
     ]
   }
