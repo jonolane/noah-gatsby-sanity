@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <section className="flex flex-col items-center justify-center font-poppins">
+      <section className="flex flex-col items-center justify-center font-poppins tracking-wider">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-10">
           {albums.map((album) => (
             <Card
