@@ -2,14 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 import { authenticate } from '../utils/spotifyAuth';
-
-// testing sanity connection
 import { useStaticQuery, graphql } from 'gatsby';
 
 export default function Home() {
   const [albums, setAlbums] = useState([]);
-
-  // test query for sanity
 
   const data = useStaticQuery(graphql`
   query {
@@ -32,17 +28,15 @@ export default function Home() {
   }
 `);
 
-console.log(JSON.stringify(data));
+data.allSanityRelease.nodes.forEach((node) => {
+  const spotifyLink = node.spotifyLink;
+  console.log(spotifyLink);
+});
 
   useEffect(() => {
     authenticate().then((api) => {
-      const albumLinks = [
-        'https://open.spotify.com/album/42wtQWKJgputaha9JSKWGJ?si=AyjFXxR-SZiYPriSP34sUg',
-        'https://open.spotify.com/album/0blfd2gTNu3Yr3k7ehOe1Y?si=QlOxcJ0_Raa5SQG3hEjZtw',
-        'https://open.spotify.com/album/4ngbnWenF6xcw6gtZzGOFH?si=j2lCDio9STqbs_mirk92zw',
-        'https://open.spotify.com/album/2cB3JYraRPrxqIODugyL6M?si=Dn8GgarCSvGf4ZJi26XjJQ',
-        'https://open.spotify.com/album/1r84Srqz3Ph0EPucaQQLLm?si=QaGcQbHISLKA5wi10j2uVQ',
-      ];
+
+      const albumLinks = data.allSanityRelease.nodes.map((node) => node.spotifyLink);
 
       Promise.all(
         albumLinks.map((link) => {
