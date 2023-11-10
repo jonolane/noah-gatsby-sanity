@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
 
+require("dotenv").config()
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
@@ -17,8 +19,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: process.env.SANITY_PROJECT_ID,
-        dataset: process.env.SANITY_DATASET,
+        projectId: 'h9sl2tbd',
+        dataset: 'production',
       },
     },
     {

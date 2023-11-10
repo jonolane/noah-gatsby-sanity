@@ -34,7 +34,7 @@ export default {
       */
 
       {
-        name: 'spotityLink',
+        name: 'spotifyLink',
         title: 'Spotify Link',
         type: 'url',
         description: 'has to be an album or track url or cover art image will not load. also if it is a single track, make sure "track" is selected at the bottom'

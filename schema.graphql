@@ -1,0 +1,15 @@
+type Release implements Node {
+  id: ID!
+  artist: Artist!
+  title: String!
+  workDone: String!
+  spotifyLink: String!
+  year: Int!
+  slug: String!
+  singleTrack: Boolean!
+  displayOrNo: Boolean!
+}
+
+type Query {
+  allSanityRelease: [Release!]!
+}

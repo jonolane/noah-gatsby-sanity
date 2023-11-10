@@ -3,8 +3,36 @@ import Layout from '../components/Layout';
 import Card from '../components/Card';
 import { authenticate } from '../utils/spotifyAuth';
 
+// testing sanity connection
+import { useStaticQuery, graphql } from 'gatsby';
+
 export default function Home() {
   const [albums, setAlbums] = useState([]);
+
+  // test query for sanity
+
+  const data = useStaticQuery(graphql`
+  query {
+    allSanityRelease {
+      nodes {
+        artist {
+          name
+        }
+        title
+        workDone
+        spotifyLink
+        year
+        singleTrack
+        displayOrNo
+        slug {
+          current
+        }
+      }
+    }
+  }
+`);
+
+console.log(JSON.stringify(data));
 
   useEffect(() => {
     authenticate().then((api) => {
