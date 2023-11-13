@@ -1,15 +1,14 @@
-type Release implements Node {
-  id: ID!
-  artist: Artist!
+type SanityRelease implements Node {
+  artist: SanityArtist
   title: String!
-  workDone: String!
+  workDone: String
   spotifyLink: String!
-  year: Int!
-  slug: String!
-  singleTrack: Boolean!
-  displayOrNo: Boolean!
+  year: Int
+  singleTrack: Boolean
+  displayOrNo: Boolean
+  slug: SanitySlug
 }
 
 type Query {
-  allSanityRelease: [Release!]!
+  allSanityRelease: SanityReleaseConnection!
 }
