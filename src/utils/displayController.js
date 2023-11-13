@@ -30,8 +30,8 @@ export const getAlbums = async (data) => {
     .map((node) => {
       const spotifyLink = node.spotifyLink;
       const isSingleTrack = node.singleTrack;
-      const year = node.year;
       const displayOrNo = node.displayOrNo !== false;
+      const slug = node.slug.current;
 
       if (!isSingleTrack) {
         const id = spotifyLink.match(/album\/(\w+)/)[1];
@@ -41,8 +41,9 @@ export const getAlbums = async (data) => {
           type: 'album',
           name: result.name,
           images: result.images,
-          year: year,
+          release_date: result.release_date,
           displayOrNo: displayOrNo,
+          slug: slug,
         };
       } else {
         const id = spotifyLink.match(/track\/(\w+)/)[1];
@@ -52,13 +53,14 @@ export const getAlbums = async (data) => {
           type: 'track',
           name: result.name,
           album: result.album,
-          year: year,
+          release_date: result.album.release_date,
           displayOrNo: displayOrNo,
+          slug: slug,
         };
       }
     });
 
-  const sortedResults = combinedResults.sort((a, b) => b.year - a.year);
+  const sortedResults = combinedResults.sort((a, b) => new Date(b.release_date) - new Date(a.release_date));
   const filteredAlbums = sortedResults.filter((album) => album.displayOrNo !== false);
 
   return filteredAlbums;
@@ -75,7 +77,6 @@ export const useAlbums = () => {
           title
           workDone
           spotifyLink
-          year
           singleTrack
           displayOrNo
           slug {

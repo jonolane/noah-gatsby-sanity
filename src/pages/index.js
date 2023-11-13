@@ -5,6 +5,7 @@ import { useAlbums } from '../utils/displayController';
 
 export default function Home() {
   const albums = useAlbums();
+  console.log(albums);
 
   return (
     <Layout>

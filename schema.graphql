@@ -3,7 +3,6 @@ type SanityRelease implements Node {
   title: String!
   workDone: String
   spotifyLink: String!
-  year: Int
   singleTrack: Boolean
   displayOrNo: Boolean
   slug: SanitySlug
