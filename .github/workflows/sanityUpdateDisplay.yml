@@ -1,0 +1,22 @@
+name: Develop Gatsby site
+
+on:
+  repository_dispatch:
+    types: [sanity-webhook]
+
+jobs:
+  develop:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Clean Gatsby cache
+        run: gatsby clean
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Start Gatsby develop server
+        run: gatsby develop
