@@ -1,4 +1,5 @@
 module.exports = {
+    // toggling jsdom environment vs none. currently implementation of jest.conifig.js is aligned with the gatsby docs
     // testEnvironment: 'jest-environment-jsdom',
     transform: {
       '^.+\\.jsx?$': `<rootDir>/jest-preprocess.js`,
@@ -13,7 +14,9 @@ module.exports = {
       __PATH_PREFIX__: ``,
     },
     testEnvironmentOptions: {
+      // sixteen pacakge troubleshooting by using testURL instead
       url: `http://localhost`,
+      // testURL: `http://localhost`,  
     },
     setupFiles: [`<rootDir>/loadershim.js`],
     // trying to fix the error: "ReferenceError: TextEncoder is not defined during unit test for spotify api authenitcation"
