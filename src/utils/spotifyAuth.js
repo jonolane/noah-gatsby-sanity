@@ -6,11 +6,14 @@ const CLIENT_SECRET = process.env.GATSBY_SPOTIFY_CLIENT_SECRET;
 async function authenticate() {
   const api = new SpotifyWebApi();
 
+  // buffer used to replace deprecated btoa function. polyfill necessary in gatsby-browser.js for browser environment
+  const authHeader = 'Basic ' + Buffer.from(CLIENT_ID + ':' + CLIENT_SECRET).toString('base64');
+
   const requestOptions = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
-      Authorization: 'Basic ' + btoa(CLIENT_ID + ':' + CLIENT_SECRET),
+      Authorization: authHeader,
     },
     body: new URLSearchParams({
       grant_type: 'client_credentials',

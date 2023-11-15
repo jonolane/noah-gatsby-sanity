@@ -1,5 +1,5 @@
 module.exports = {
-    testEnvironment: 'jest-environment-jsdom',
+    // testEnvironment: 'jest-environment-jsdom',
     transform: {
       '^.+\\.jsx?$': `<rootDir>/jest-preprocess.js`,
     },
@@ -16,4 +16,6 @@ module.exports = {
       url: `http://localhost`,
     },
     setupFiles: [`<rootDir>/loadershim.js`],
+    // trying to fix the error: "ReferenceError: TextEncoder is not defined during unit test for spotify api authenitcation"
+    // setupFilesAfterEnv: ['<rootDir>/src/utils/setupTests.js'],
   };
