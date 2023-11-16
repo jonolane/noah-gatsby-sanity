@@ -1,4 +1,4 @@
-name: Develop Gatsby site
+name: update sanity display in development mode
 
 on:
   repository_dispatch:
@@ -12,11 +12,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Clean Gatsby cache
-        run: gatsby clean
-
       - name: Install dependencies
         run: npm install
+
+      - name: Clean Gatsby cache
+        run: gatsby clean
 
       - name: Start Gatsby develop server
         run: gatsby develop
