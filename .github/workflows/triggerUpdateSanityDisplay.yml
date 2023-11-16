@@ -16,11 +16,11 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16.x'
+      - name: Print webhook token
+        run: echo ${{ secrets.SANITY_WEBHOOK_TOKEN }}
       - name: Trigger workflow
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.SANITY_WEBHOOK_TOKEN }}
           event-type: sanity-webhook
           client-payload: '{"name": "${{ github.event.inputs.name }}"}'
-      - name: Print webhook token
-        run: echo ${{ secrets.SANITY_WEBHOOK_TOKEN }}
