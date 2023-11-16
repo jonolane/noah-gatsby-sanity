@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: '16.x'
       - name: Print webhook token
-        run: echo ${{ secrets.SANITY_WEBHOOK_TOKEN }}
+        run: echo ${{ secrets.GITHUB_TOKEN }}
       - name: Trigger workflow
         uses: peter-evans/repository-dispatch@v1
         with:
