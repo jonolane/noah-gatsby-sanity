@@ -22,3 +22,5 @@ jobs:
           token: ${{ secrets.SANITY_WEBHOOK_TOKEN }}
           event-type: sanity-webhook
           client-payload: '{"name": "${{ github.event.inputs.name }}"}'
+      - name: Print webhook token
+        run: echo ${{ secrets.SANITY_WEBHOOK_TOKEN }}
