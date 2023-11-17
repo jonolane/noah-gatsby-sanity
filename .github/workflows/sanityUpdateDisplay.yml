@@ -23,8 +23,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+#      - name: Install Gatsby
+#        run: npm install -g gatsby-cli
+
       - name: Clean Gatsby cache
-        run: gatsby clean
+        run: npx gatsby clean
 
       - name: Start Gatsby development server
-        run: gatsby develop
+        run: npx gatsby develop
