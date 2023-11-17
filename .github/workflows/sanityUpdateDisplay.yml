@@ -23,11 +23,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # github actions cannot run gatsby commands without global install
 #      - name: Install Gatsby
 #        run: npm install -g gatsby-cli
-
+      
+      # kill any current development server, if running 
       - name: Stop Gatsby development server
-        run: pkill -f "gatsby develop"
+        run: pkill -f 'npx gatsby develop'
 
       - name: Clean Gatsby cache
         run: npx gatsby clean

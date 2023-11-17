@@ -6,7 +6,9 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+
+    "develop": "npx gatsby develop",
+    
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
