@@ -12,6 +12,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Print workspace directory
+        run: echo ${{ github.workspace }}"
+
+      - name: Print current working directory
+        run: echo $PWD"
+
       - name: Use Node.js 18
         uses: actions/setup-node@v2
         with:
