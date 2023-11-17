@@ -26,6 +26,9 @@ jobs:
 #      - name: Install Gatsby
 #        run: npm install -g gatsby-cli
 
+      - name: Stop Gatsby development server
+        run: pkill -f "npx gatsby develop"
+
       - name: Clean Gatsby cache
         run: npx gatsby clean
 
