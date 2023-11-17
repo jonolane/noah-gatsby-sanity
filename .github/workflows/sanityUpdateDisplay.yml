@@ -5,12 +5,20 @@ on:
     types: [sanity-webhook]
 
 jobs:
-  develop:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.18.0'
+
+      - name: Change working directory
+        run: cd noah-gatsby-sanity
 
       - name: Install dependencies
         run: npm install
@@ -18,5 +26,5 @@ jobs:
       - name: Clean Gatsby cache
         run: gatsby clean
 
-      - name: Start Gatsby develop server
+      - name: Start Gatsby development server
         run: gatsby develop
