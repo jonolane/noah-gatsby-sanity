@@ -18,11 +18,11 @@ jobs:
           node-version: '18.18.0'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       # github actions cannot run gatsby commands without global install
-      #- name: Install Gatsby
-      #  run: npm install -g gatsby-cli
+      - name: Install Gatsby CLI globally on github action servers
+        run: npm install -g gatsby-cli@latest
       
       # attempt to echo processes
       #- name: List Gatsby processes
@@ -39,6 +39,4 @@ jobs:
         run: npx gatsby clean
 
       - name: Start Gatsby development server
-        env: 
-          GATSBY_LOG_LEVEL: debug
         run: npx gatsby develop
