@@ -12,9 +12,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Print workspace directory
-        run: echo ${{ github.workspace }}
-
       - name: Use Node.js 18
         uses: actions/setup-node@v2
         with:
@@ -26,10 +23,13 @@ jobs:
       # github actions cannot run gatsby commands without global install
       #- name: Install Gatsby
       #  run: npm install -g gatsby-cli
+
+      - name: Print pkill version
+        run: pkill --version
       
       # attempt to echo processes
       - name: List Gatsby processes
-        run: ps aux | grep gatsby
+        run: ps aux
 
       # kill every development server instance / worker, if running 
       - name: Stop Gatsby development server
