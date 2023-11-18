@@ -40,5 +40,5 @@ jobs:
 
       - name: Start Gatsby development server
         env: 
-          GATSBY_LOG_LEVEL: verbose
+          GATSBY_LOG_LEVEL: debug
         run: npx gatsby develop
