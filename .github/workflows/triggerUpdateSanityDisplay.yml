@@ -1,3 +1,5 @@
+# .yml files not currently needed while using vercel
+
 name: Trigger update sanity display in development mode
 
 on:
