@@ -23,13 +23,13 @@ jobs:
       # github actions cannot run gatsby commands without global install
       #- name: Install Gatsby
       #  run: npm install -g gatsby-cli
-
-      - name: Print pkill version
-        run: pkill --version
       
       # attempt to echo processes
       - name: List Gatsby processes
         run: ps aux
+
+      - name: Print pkill version
+        run: pkill -V
 
       # kill every development server instance / worker, if running 
       - name: Stop Gatsby development server
