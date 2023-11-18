@@ -27,9 +27,9 @@ jobs:
 #      - name: Install Gatsby
 #        run: npm install -g gatsby-cli
       
-      # kill any current development server, if running 
+      # kill every development server instance / worker, if running 
       - name: Stop Gatsby development server
-        run: pkill -f 'npx gatsby develop'
+        run: pkill -f 'gatsby'
 
       - name: Clean Gatsby cache
         run: npx gatsby clean
