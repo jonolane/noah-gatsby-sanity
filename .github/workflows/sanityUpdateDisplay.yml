@@ -36,9 +36,9 @@ jobs:
       #  run: pkill -f 'gatsby'
 
       - name: Clean Gatsby cache
-        run: npx gatsby clean
+        run: gatsby clean
 
       - name: Start Gatsby development server
         env: 
           GATSBY_LOG_LEVEL: debug
-        run: npx gatsby develop
+        run: gatsby develop

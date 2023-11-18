@@ -7,8 +7,8 @@
   "scripts": {
     "build": "gatsby build",
 
-    "develop": "npx gatsby develop",
-    
+    "develop": "gatsby develop",
+
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
