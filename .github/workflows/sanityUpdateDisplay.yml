@@ -39,4 +39,6 @@ jobs:
         run: npx gatsby clean
 
       - name: Start Gatsby development server
+        env: 
+          GATSBY_LOG_LEVEL: verbose
         run: npx gatsby develop
