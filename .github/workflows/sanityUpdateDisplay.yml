@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout repository
@@ -24,9 +24,13 @@ jobs:
         run: npm install
 
       # github actions cannot run gatsby commands without global install
-#      - name: Install Gatsby
-#        run: npm install -g gatsby-cli
+      #- name: Install Gatsby
+      #  run: npm install -g gatsby-cli
       
+      # attempt to echo processes
+      - name: List Gatsby processes
+        run: ps aux | grep gatsby
+
       # kill every development server instance / worker, if running 
       - name: Stop Gatsby development server
         run: pkill -f 'gatsby'
