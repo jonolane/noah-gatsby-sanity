@@ -25,15 +25,15 @@ jobs:
       #  run: npm install -g gatsby-cli
       
       # attempt to echo processes
-      - name: List Gatsby processes
-        run: ps aux
+      #- name: List Gatsby processes
+      #  run: ps aux 
 
-      - name: Print pkill version
-        run: pkill -V
+      #- name: Print pkill version
+      #  run: pkill
 
       # kill every development server instance / worker, if running 
-      - name: Stop Gatsby development server
-        run: pkill -f 'gatsby'
+      #- name: Stop Gatsby development server
+      #  run: pkill -f 'gatsby'
 
       - name: Clean Gatsby cache
         run: npx gatsby clean
