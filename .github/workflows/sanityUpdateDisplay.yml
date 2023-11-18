@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # github actions cannot run gatsby commands without global install
+      # github actions cannot run gatsby commands without global install. might not be necessary
       - name: Install Gatsby CLI globally on github action servers
         run: npm install -g gatsby-cli@latest
       
