@@ -5,7 +5,14 @@ import { useAlbums } from '../utils/displayController';
 
 export default function Home() {
   const albums = useAlbums();
+
+  // logging for development
   console.log(albums);
+
+  const handleCardClick = (url) => {
+    window.open(url, '_blank');
+    console.log(url);
+  };
 
   return (
     <Layout>
@@ -16,6 +23,7 @@ export default function Home() {
               key={album.id}
               imageSrc={album.type === 'album' ? album.images[0].url : album.album.images[0].url}
               title={album.name}
+              onClick={() => handleCardClick(album.link)}
             />
           ))}
         </div>

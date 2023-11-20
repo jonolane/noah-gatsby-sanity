@@ -44,6 +44,7 @@ export const getAlbums = async (data) => {
           release_date: result.release_date,
           displayOrNo: displayOrNo,
           slug: slug,
+          link: spotifyLink,
         };
       } else {
         const id = spotifyLink.match(/track\/(\w+)/)[1];
@@ -56,6 +57,7 @@ export const getAlbums = async (data) => {
           release_date: result.album.release_date,
           displayOrNo: displayOrNo,
           slug: slug,
+          link: spotifyLink,
         };
       }
     });
