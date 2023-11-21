@@ -90,7 +90,7 @@ const Discography = () => {
 
   return (
     <Layout>
-      <div className='font-poppins tracking-wider pt-10 px-10'>
+      <div className='font-poppins tracking-wider px-10 pt-10 pb-6'>
         {sortedReleases.map((release) => (
           <div key={release.spotifyLink} style={{ textAlign: 'center' }}>
             <p className='my-5'>{`${release.artist.name} - ${release.title} - ${release.workDone}`}</p>
