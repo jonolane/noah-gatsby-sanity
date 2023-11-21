@@ -11,7 +11,6 @@ export default function Home() {
 
   const handleCardClick = (url) => {
     window.open(url, '_blank');
-    console.log(url);
   };
 
   return (
