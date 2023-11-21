@@ -5,16 +5,20 @@ import { StaticImage } from 'gatsby-plugin-image';
 const Contact = () => {
   return (
     <Layout>
-      <div className="flex flex-col items-center px-4 md:px-10 py-6 md:mx-auto">
+      <div className="flex flex-col items-center px-4 py-6">
 
         <h1 className='text-xl font-poppins mb-4'>Producer / Musician / Engineer</h1>
 
-        <div className="p-4 mb-8 max-w-2xl w-full">
+        {/* Form Section */}
+        <div className="p-4 mb-8 w-full mx-auto max-w-screen-lg">
 
+          {/* Web3Forms */}
           <form className="bg-white p-6 rounded-none tracking-wider" action='https://api.web3forms.com/submit' method='POST'>
 
+            {/* Access Key */}
             <input type="hidden" name='access_key' value='246f51fb-fee2-4610-8fd2-aba2ec308f2d' />
 
+            {/* Name Input */}
             <div className="mb-4">
               <label htmlFor="name" className="block text-sm font-poppins pb-2">Name (required)</label>
               <input
@@ -26,6 +30,7 @@ const Contact = () => {
               />
             </div>
 
+            {/* Email Input */}
             <div className="mb-4">
               <label htmlFor="email" className="block text-sm font-poppins pb-2">Email Address (required)</label>
               <input
@@ -37,6 +42,7 @@ const Contact = () => {
               />
             </div>
 
+            {/* Project Name Input */}
             <div className="mb-4">
               <label htmlFor="project" className="block text-sm font-poppins pb-2">Project Name (required)</label>
               <input
@@ -48,6 +54,7 @@ const Contact = () => {
               />
             </div>
 
+            {/* Service Requested Input */}
             <div className="mb-4">
               <label htmlFor="service" className="block text-sm font-poppins pb-2">Service Requested (required)</label>
               <input
@@ -60,6 +67,7 @@ const Contact = () => {
               <p className="text-sm mt-2">Mixing, Overdubbing, Mastering, Producing, or other collaboration</p>
             </div>
 
+            {/* Number of Songs Input */}
             <div className="mb-4">
               <label htmlFor="songs" className="block text-sm font-poppins pb-2">How many songs? (required)</label>
               <input
@@ -71,6 +79,7 @@ const Contact = () => {
               />
             </div>
 
+            {/* Notes Textarea */}
             <div className="mb-4">
               <label htmlFor="notes" className="block text-sm font-poppins pb-2">Notes (required)</label>
               <textarea
@@ -82,10 +91,12 @@ const Contact = () => {
               <p className="text-sm mt-2">Tell me about yourself, the project, link to demos, favorite breakfast food, etc</p>
             </div>
 
+            {/* Submit Button */}
             <button className="bg-black text-white py-3 px-4 rounded-none" type='submit'>Send</button>
           </form>
         </div>
 
+        {/* Image Section */}
         <div className='flex flex-col items-center pb-6'>
           <StaticImage
             src="../images/noahStudio.jpg"
@@ -101,6 +112,7 @@ const Contact = () => {
 };
 
 export default Contact;
+
 
 /*
 import React from 'react';
