@@ -7,7 +7,7 @@ export default function Navbar() {
       <h1 className="text-4xl font-semibold font-uni">Noah Kittinger</h1>
       <div className="links text-lg font-kalam">
         <Link to="/" className="mr-6 hover:underline">Music</Link>
-        <Link to="/about" className="mr-6 hover:underline">About</Link>
+        <Link to="/discography" className="mr-6 hover:underline">Discography</Link>
         <Link to="/contact" className="hover:underline">Contact</Link>
       </div>
     </nav>

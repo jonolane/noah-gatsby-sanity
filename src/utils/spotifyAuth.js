@@ -1,5 +1,6 @@
 const SpotifyWebApi = require('spotify-web-api-js');
 
+// will want to change this to production environment variables, in order to hide from public repo
 /* 
 const CLIENT_ID = process.env.GATSBY_SPOTIFY_CLIENT_ID;
 const CLIENT_SECRET = process.env.GATSBY_SPOTIFY_CLIENT_SECRET;
