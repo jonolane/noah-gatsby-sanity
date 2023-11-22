@@ -90,12 +90,32 @@ const Discography = () => {
 
   return (
     <Layout>
-      <div className='font-poppins tracking-wider px-10 pt-10 pb-6'>
-        {sortedReleases.map((release) => (
-          <div key={release.spotifyLink} style={{ textAlign: 'center' }}>
-            <p className='my-5'>{`${release.artist.name} - ${release.title} - ${release.workDone}`}</p>
-          </div>
-        ))}
+      <div className='font-poppins tracking-wider px-10 py-6'>
+        {sortedReleases.map((release, index) => {
+          const currentYear = new Date(release.releaseDate).getFullYear();
+          const previousRelease = sortedReleases[index - 1];
+          const previousYear = previousRelease ? new Date(previousRelease.releaseDate).getFullYear() : null;
+  
+          if (previousYear !== currentYear) {
+            const isFirstYear = index === 0; // Check if it's the first year
+  
+            return (
+              <React.Fragment key={currentYear}>
+                <h1 className={`text-center text-2xl ${isFirstYear ? '' : 'mt-11'}`}>{currentYear}</h1>
+                <div className='text-center'>
+                  <p className='my-5'>{`${release.artist.name} - ${release.title} - ${release.workDone}`}</p>
+                </div>
+
+              </React.Fragment>
+            );
+          }
+  
+          return (
+            <div key={release.spotifyLink} className='text-center'>
+              <p className='my-5'>{`${release.artist.name} - ${release.title} - ${release.workDone}`}</p>
+            </div>
+          );
+        })}
       </div>
     </Layout>
   );
