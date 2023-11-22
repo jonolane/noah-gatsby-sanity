@@ -5,12 +5,12 @@ import { StaticImage } from 'gatsby-plugin-image';
 const Contact = () => {
   return (
     <Layout>
-      <div className="flex flex-col items-center px-4 py-6">
+      <div className="flex flex-col items-center px-4 py-6 font-poppins">
 
-        <h1 className='text-xl font-poppins mb-4'>Producer / Musician / Engineer</h1>
+        <h1 className='text-xl mb-4'>Producer / Musician / Engineer</h1>
 
         {/* Form Section */}
-        <div className="p-4 mb-8 w-full mx-auto max-w-screen-lg">
+        <div className="p-4 mb-2 w-full mx-auto max-w-screen-lg">
 
           {/* Web3Forms */}
           <form className="bg-white p-6 rounded-none tracking-wider" action='https://api.web3forms.com/submit' method='POST'>
@@ -19,8 +19,8 @@ const Contact = () => {
             <input type="hidden" name='access_key' value='246f51fb-fee2-4610-8fd2-aba2ec308f2d' />
 
             {/* Name Input */}
-            <div className="mb-4">
-              <label htmlFor="name" className="block text-sm font-poppins pb-2">Name (required)</label>
+            <div className="mb-5">
+              <label htmlFor="name" className="block text-sm pb-2">Name (required)</label>
               <input
                 type="text"
                 id="name"
@@ -31,8 +31,8 @@ const Contact = () => {
             </div>
 
             {/* Email Input */}
-            <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-poppins pb-2">Email Address (required)</label>
+            <div className="mb-5">
+              <label htmlFor="email" className="block text-sm pb-2">Email Address (required)</label>
               <input
                 type="email"
                 id="email"
@@ -43,8 +43,8 @@ const Contact = () => {
             </div>
 
             {/* Project Name Input */}
-            <div className="mb-4">
-              <label htmlFor="project" className="block text-sm font-poppins pb-2">Project Name (required)</label>
+            <div className="mb-5">
+              <label htmlFor="project" className="block text-sm pb-2">Project Name (required)</label>
               <input
                 type="text"
                 id="project"
@@ -55,8 +55,9 @@ const Contact = () => {
             </div>
 
             {/* Service Requested Input */}
-            <div className="mb-4">
-              <label htmlFor="service" className="block text-sm font-poppins pb-2">Service Requested (required)</label>
+            <div className="mb-5">
+              <label htmlFor="service" className="block text-sm pb-2">Service Requested (required)</label>
+              {/* <p className="text-sm mt-2">Mixing, Overdubbing, Mastering, Producing, or other collaboration</p> */}
               <input
                 type='text'
                 id="service"
@@ -64,12 +65,11 @@ const Contact = () => {
                 className="w-full p-3 border border-gray-400 bg-gray-50"
                 required
               />
-              <p className="text-sm mt-2">Mixing, Overdubbing, Mastering, Producing, or other collaboration</p>
             </div>
 
             {/* Number of Songs Input */}
-            <div className="mb-4">
-              <label htmlFor="songs" className="block text-sm font-poppins pb-2">How many songs? (required)</label>
+            <div className="mb-5">
+              <label htmlFor="songs" className="block text-sm pb-2">How many songs? (required)</label>
               <input
                 type="number"
                 id="songs"
@@ -80,19 +80,21 @@ const Contact = () => {
             </div>
 
             {/* Notes Textarea */}
-            <div className="mb-4">
-              <label htmlFor="notes" className="block text-sm font-poppins pb-2">Notes (required)</label>
+            <div className="mb-7">
+              <label htmlFor="notes" className="block text-sm pb-2">Notes (required)</label>
               <textarea
                 id="notes"
                 name="notes"
                 className="w-full p-3 border border-gray-400 bg-gray-50"
                 required
               ></textarea>
-              <p className="text-sm mt-2">Tell me about yourself, the project, link to demos, favorite breakfast food, etc</p>
+              {/* <p className="text-sm mt-2">Tell me about yourself, the project, link to demos, favorite breakfast food, etc</p> */}
             </div>
 
             {/* Submit Button */}
-            <button className="bg-black text-white py-3 px-4 rounded-none" type='submit'>Send</button>
+            <div className='flex justify-center'>
+              <button className="bg-black text-white py-4 px-7 rounded-none transition duration-150 ease-in-out hover:bg-opacity-80" type='submit'>Send</button>
+            </div>
           </form>
         </div>
 
