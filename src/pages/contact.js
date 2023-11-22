@@ -106,6 +106,7 @@ const Contact = () => {
             width={900}
             quality={95} // You can adjust the image quality
             formats={['auto', 'webp', 'avif']} // Support multiple formats
+            placeholder='none'
           />
         </div>
       </div>

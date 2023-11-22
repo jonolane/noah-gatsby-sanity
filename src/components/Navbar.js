@@ -11,6 +11,7 @@ export default function Navbar() {
         width={500}
         quality={95} // You can adjust the image quality
         formats={['auto', 'webp', 'avif']} // Support multiple formats
+        placeholder='none'
       />
       <div className="links text-lg font-uni pt-1">
         <Link to="/" className="mr-6 hover:underline">Music</Link>
