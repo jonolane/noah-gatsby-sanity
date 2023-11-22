@@ -144,7 +144,6 @@ export default function Layout({ children }) {
 */
 
 // current hacky best working solution for phantom footer
-
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -159,12 +158,14 @@ export default function Layout({ children }) {
 
     const handleContentRender = async () => {
       // Simulate an asynchronous operation to fetch data or perform any other tasks
-      await new Promise((resolve) => setTimeout(resolve, isInitialLoad ? 2000 : 200));
+      await new Promise((resolve) => setTimeout(resolve, isInitialLoad ? 5000 : 200));
 
       if (isMounted) {
         setContentLoaded(true);
       }
     };
+
+    console.log('isInitialLoad:', isInitialLoad);
 
     handleContentRender();
 

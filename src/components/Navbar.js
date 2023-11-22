@@ -4,6 +4,31 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export default function Navbar() {
   return (
+    <nav className="pr-10 flex flex-col justify-between items-center tracking-widest sm:flex-row">
+      <StaticImage
+        src="../images/noahDots.png"
+        alt="Bedroom"
+        width={500}
+        quality={95} // You can adjust the image quality
+        formats={['auto', 'webp', 'avif']} // Support multiple formats
+      />
+      <div className="links text-lg font-uni pt-1">
+        <Link to="/" className="mr-6 hover:underline">Music</Link>
+        <Link to="/discography" className="mr-6 hover:underline">Discography</Link>
+        <Link to="/contact" className="hover:underline">Contact</Link>
+      </div>
+    </nav>
+  )
+}
+
+// previous solution, no stacking on smaller screens
+/*
+import React from 'react'
+import { Link } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image';  
+
+export default function Navbar() {
+  return (
     <nav className="pr-10 flex justify-between items-center tracking-widest">
       <StaticImage
         src="../images/noahDots.png"
@@ -20,6 +45,7 @@ export default function Navbar() {
     </nav>
   )
 }
+*/
 
 // name instead of logo route
 /* 
