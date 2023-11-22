@@ -4,7 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 
 export default function Navbar() {
   return (
-    <nav className="pr-10 flex flex-col justify-between items-center tracking-widest sm:flex-row">
+    <nav className="flex flex-col items-center tracking-widest sm:flex-row sm:justify-between sm:pr-10">
       <StaticImage
         src="../images/noahDots.png"
         alt="Bedroom"
