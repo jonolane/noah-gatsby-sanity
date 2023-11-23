@@ -6,18 +6,13 @@ const Contact = () => {
   return (
     <Layout>
       <div className="flex flex-col items-center px-4 py-6 font-poppins">
-
         <h1 className='text-xl mb-4'>Producer / Musician / Engineer</h1>
-
         {/* Form Section */}
         <div className="p-4 mb-2 w-full mx-auto max-w-screen-lg">
-
           {/* Web3Forms */}
           <form className="bg-white p-6 rounded-none tracking-wider" action='https://api.web3forms.com/submit' method='POST'>
-
             {/* Access Key */}
             <input type="hidden" name='access_key' value='246f51fb-fee2-4610-8fd2-aba2ec308f2d' />
-
             {/* Name Input */}
             <div className="mb-5">
               <label htmlFor="name" className="block text-sm pb-2">Name (required)</label>
@@ -115,7 +110,6 @@ const Contact = () => {
 };
 
 export default Contact;
-
 
 /*
 import React from 'react';

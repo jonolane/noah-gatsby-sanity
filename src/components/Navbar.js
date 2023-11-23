@@ -6,15 +6,19 @@ import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 export default function Navbar() {
   const [isIcon, setIcon] = useState(false);
-  const [isIconToggle, setIconToggle] = useState(true);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const handleClick = () => {
-    setIconToggle(!isIconToggle);
+    setModalOpen(!isModalOpen);
+    console.log('isModalOpen: ', isModalOpen);
   };
 
   useEffect(() => {
     const handleResize = () => {
       setIcon(window.innerWidth <= 640);
+      if (window.innerWidth > 640) {
+        setModalOpen(false);
+      }
     };
 
     handleResize();
@@ -24,6 +28,8 @@ export default function Navbar() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  const isBarsVisible = !isModalOpen;
 
   return (
     <nav className="flex flex-col items-center tracking-widest sm:flex-row sm:justify-between sm:pr-10">
@@ -39,7 +45,7 @@ export default function Navbar() {
       {isIcon ? (
         <div>
           <FontAwesomeIcon
-            icon={isIconToggle ? faBars : faXmark}
+            icon={isBarsVisible ? faBars : faXmark}
             className="text-black transition-opacity duration-500"
             size="2x"
             onClick={handleClick}
@@ -50,6 +56,21 @@ export default function Navbar() {
           <Link to="/" className="mr-6 hover:underline">Music</Link>
           <Link to="/discography" className="mr-6 hover:underline">Discography</Link>
           <Link to="/contact" className="hover:underline">Contact</Link>
+        </div>
+      )}
+      {isModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-opacity-50">
+          <div className="bg-white p-4 w-4/6 h-4/">
+            <Link to="/" className="block my-2 hover:underline">
+              Music
+            </Link>
+            <Link to="/discography" className="block my-2 hover:underline">
+              Discography
+            </Link>
+            <Link to="/contact" className="block my-2 hover:underline">
+              Contact
+            </Link>
+          </div>
         </div>
       )}
     </nav>

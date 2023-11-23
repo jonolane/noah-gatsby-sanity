@@ -158,7 +158,7 @@ export default function Layout({ children }) {
 
     const handleContentRender = async () => {
       // Simulate an asynchronous operation to fetch data or perform any other tasks
-      await new Promise((resolve) => setTimeout(resolve, isInitialLoad ? 5000 : 200));
+      await new Promise((resolve) => setTimeout(resolve, 200));
 
       if (isMounted) {
         setContentLoaded(true);
