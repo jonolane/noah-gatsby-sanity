@@ -13,7 +13,7 @@ export default function Navbar() {
         formats={['auto', 'webp', 'avif']} // Support multiple formats
         placeholder='none'
       />
-      <div className="links text-lg font-uni pt-1">
+      <div className="links text-xl font-uni pt-1">
         <Link to="/" className="mr-6 hover:underline">Music</Link>
         <Link to="/discography" className="mr-6 hover:underline">Discography</Link>
         <Link to="/contact" className="hover:underline">Contact</Link>
