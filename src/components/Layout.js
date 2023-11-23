@@ -144,7 +144,6 @@ export default function Layout({ children }) {
 */
 
 // current hacky best working solution for phantom footer
-/*
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -204,7 +203,7 @@ export default function Layout({ children }) {
       <Footer />
     </div>
   );
-}*/
+}
 
 // trying to get the page to render only after it's finished loading
 /*
@@ -252,6 +251,7 @@ export default function Layout({ children }) {
 */
 
 // useEffect with empty dependency array to "simulate" window.onload
+/*
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -289,3 +289,4 @@ export default function Layout({ children }) {
     </div>
   );
 }
+*/
