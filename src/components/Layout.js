@@ -144,6 +144,7 @@ export default function Layout({ children }) {
 */
 
 // current hacky best working solution for phantom footer
+/*
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -199,6 +200,90 @@ export default function Layout({ children }) {
       <div className="content">
         {!isContentLoaded && <LoadingPlaceholder />}
         {isContentLoaded && children}
+      </div>
+      <Footer />
+    </div>
+  );
+}*/
+
+// trying to get the page to render only after it's finished loading
+/*
+import React, { useState, useEffect } from 'react';
+import Navbar from './Navbar';
+import Footer from './Footer';
+
+export default function Layout({ children }) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const handleContentRender = async () => {
+      // Simulate an asynchronous operation to fetch data or perform any other tasks
+      await new Promise((resolve) => setTimeout(resolve, 150));
+
+      setIsLoading(false);
+    };
+
+    handleContentRender();
+  }, []);
+
+  return (
+    <div className={`layout bg-white text-black ${isLoading ? 'hidden' : ''}`}>
+      <head>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+      <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet" />
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+      <link href="https://fonts.googleapis.com/css2?family=Kalam&family=UnifrakturMaguntia&display=swap" rel="stylesheet" />
+
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+      </head>
+      <Navbar />
+      <div className={`content ${isLoading ? 'hidden' : ''}`}>
+        {children}
+      </div>
+      <Footer />
+    </div>
+  );
+}
+*/
+
+// window.onload
+import React, { useState, useEffect } from 'react';
+import Navbar from './Navbar';
+import Footer from './Footer';
+// import LoadingPlaceholder from './LoadingPlaceholder';
+
+export default function Layout({ children }) {
+  const [isContentLoaded, setContentLoaded] = useState(false);
+
+  useEffect(() => {
+    setContentLoaded(true);
+  }, []);
+
+  console.log('isContentLoaded: ', isContentLoaded);
+
+  return (
+    <div className={`layout bg-white text-black ${!isContentLoaded ? 'hidden' : ''}`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link href="https://fonts.googleapis.com/css2?family=Kalam&family=UnifrakturMaguntia&display=swap" rel="stylesheet" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+      </head>
+      <Navbar />
+      <div className="content">
+        {children}
       </div>
       <Footer />
     </div>
