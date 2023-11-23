@@ -13,7 +13,7 @@ export default function Navbar() {
         formats={['auto', 'webp', 'avif']} // Support multiple formats
         // playing with gatsby-plugin-image
         loading='eager'
-        placeholder='blurred'
+        placeholder='none'
       />
       <div className="links text-xl font-uni pt-1">
         <Link to="/" className="mr-6 hover:underline">Music</Link>
