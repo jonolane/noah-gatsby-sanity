@@ -251,7 +251,7 @@ export default function Layout({ children }) {
 }
 */
 
-// window.onload
+// useEffect with empty dependency array to "simulate" window.onload
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';

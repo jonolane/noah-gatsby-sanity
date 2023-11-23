@@ -11,7 +11,9 @@ export default function Navbar() {
         width={500}
         quality={95} // You can adjust the image quality
         formats={['auto', 'webp', 'avif']} // Support multiple formats
-        placeholder='none'
+        // playing with gatsby-plugin-image
+        loading='eager'
+        placeholder='blurred'
       />
       <div className="links text-xl font-uni pt-1">
         <Link to="/" className="mr-6 hover:underline">Music</Link>
