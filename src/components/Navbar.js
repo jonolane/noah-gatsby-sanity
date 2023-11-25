@@ -11,14 +11,19 @@ export default function Navbar() {
   const [isScrollDisabled, setScrollDisabled] = useState(false);
 
   const handleClick = () => {
+    const currentPage = window.location.pathname;
+    console.log('Current page:', currentPage);
+  
+    if ((currentPage === '/' || currentPage === '/discography' || currentPage === '/contact') && isModalOpen) {
+      // Close the modal if page Link is clicked and already on the same page
+      setModalOpen(false);
+      setScrollDisabled(false);
+    } else {
+      // Toggle the modal
       setModalOpen(!isModalOpen);
       setScrollDisabled(!isModalOpen);
     }
-
-  // debugging modal window not closing while on root page
-  useEffect(() => {
-    console.log('Current state of isModalOpen:', isModalOpen);
-  }, [isModalOpen]);
+  };
 
   // useEffect logic to reset state when user resizes window
   useEffect(() => {
@@ -93,13 +98,13 @@ export default function Navbar() {
         {/* fade in modal solution instead of removing it entirely */}
         <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 font-uni tracking-widest text-3xl z-10" onClick={handleClick}>
           <div className={`bg-white p-4 w-screen h-screen flex flex-col items-center justify-center transition-opacity duration-500 ${isModalOpen ? 'opacity-100' : 'opacity-0'}`} onClick={handleModalClick}>
-            <Link to="/" className="block my-2 hover:underline">
+            <Link to="/" className="block my-2 hover:underline" onClick={handleClick}>
               Music
             </Link>
-            <Link to="/discography" className="block my-2 hover:underline">
+            <Link to="/discography" className="block my-2 hover:underline" onClick={handleClick}>
               Discography
             </Link>
-            <Link to="/contact" className="block my-2 hover:underline">
+            <Link to="/contact" className="block my-2 hover:underline" onClick={handleClick}>
               Contact
             </Link>
           </div>
