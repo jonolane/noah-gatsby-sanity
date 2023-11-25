@@ -3,6 +3,7 @@ import { Link, navigate } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 export default function Navbar() {
   const [isIcon, setIcon] = useState(false);
@@ -65,6 +66,12 @@ export default function Navbar() {
     };
   }, [isScrollDisabled]);
 
+  // handle social media icon clicks
+  const handleSocialClick = (url) => {
+    window.open(url, '_blank');
+    console.log(url);
+};
+
   return (
     <nav className="flex flex-col items-center tracking-widest sm:flex-row sm:justify-between sm:pr-10">
       <StaticImage
@@ -94,19 +101,44 @@ export default function Navbar() {
         </div>
       )}
         
-        <div className={`fixed inset-0 flex items-center justify-center bg-opacity-50 font-uni tracking-widest text-3xl z-10 ${
+        {/* modal view */}
+        <div className={`fixed inset-0 flex items-center justify-center bg-opacity-50 font-uni tracking-widest text-5xl z-10 ${
           isModalOpen ? 'pointer-events-auto' : 'pointer-events-none'
         }`}>
           <div className={`bg-white p-4 w-screen h-screen flex flex-col items-center justify-center transition-opacity duration-500 ${isModalOpen ? 'opacity-100' : 'opacity-0'}`} onClick={handleModalClick}>
-            <Link to="/" className="block my-2 hover:underline" onClick={handleClick}>
+
+          {/* if modal starts bugging, try removing these two child divs and let the footer icons rest right below */}
+
+          <div className="flex flex-col justify-center items-center h-full">
+            <Link to="/" className="block my-3 hover:underline" onClick={handleClick}>
               Music
             </Link>
-            <Link to="/discography" className="block my-2 hover:underline" onClick={handleClick}>
+            <Link to="/discography" className="block my-3 hover:underline" onClick={handleClick}>
               Discography
             </Link>
-            <Link to="/contact" className="block my-2 hover:underline" onClick={handleClick}>
+            <Link to="/contact" className="block my-3 hover:underline" onClick={handleClick}>
               Contact
             </Link>
+            </div>
+            <div className='mt-auto'>
+            <div className=" space-x-6">
+              <FontAwesomeIcon
+                icon={faInstagram}
+                className="text-2xl text-black cursor-pointer"
+                onClick={() => handleSocialClick("https://www.instagram.com/kittinger.noah/")}
+              />
+              <FontAwesomeIcon
+                icon={faTwitter}
+                className="text-2xl text-black cursor-pointer"
+                onClick={() => handleSocialClick("https://twitter.com/noah_kittinger")}
+              />
+              <FontAwesomeIcon
+                icon={faYoutube}
+                className="text-2xl text-black cursor-pointer"
+                onClick={() => handleSocialClick("https://www.youtube.com/@bedroomofficial/about")}
+              />
+            </div>
+            </div>
           </div>
         </div>
     </nav>
