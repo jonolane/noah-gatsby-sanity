@@ -154,7 +154,7 @@ export default function Layout({ children }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowFooter(true);
-    }, 600); // Adjust the delay (in milliseconds) as per your requirement
+    }, 700); // Adjust the delay (in milliseconds) as per your requirement
 
     return () => clearTimeout(timer);
   }, []);
