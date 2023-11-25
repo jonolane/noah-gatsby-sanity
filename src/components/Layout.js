@@ -165,7 +165,7 @@ export default function Layout({ children }) {
       }
     };
 
-    console.log('isInitialLoad:', isInitialLoad);
+    // console.log('isInitialLoad:', isInitialLoad);
 
     handleContentRender();
 
@@ -178,7 +178,7 @@ export default function Layout({ children }) {
     setIsInitialLoad(false);
   }, []);
 
-  console.log('Rendering Layout');
+  // console.log('Rendering Layout');
 
   return (
     <div className="layout bg-white text-black">

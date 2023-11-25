@@ -6,8 +6,7 @@ import { useAlbums } from '../utils/displayController';
 export default function Home() {
   const albums = useAlbums();
 
-  // logging for development
-  console.log(albums);
+  // console.log(albums);
 
   const handleCardClick = (url) => {
     window.open(url, '_blank');

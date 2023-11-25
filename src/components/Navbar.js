@@ -11,10 +11,14 @@ export default function Navbar() {
   const [isScrollDisabled, setScrollDisabled] = useState(false);
 
   const handleClick = () => {
-    setModalOpen(!isModalOpen);
-    setScrollDisabled(!isModalOpen);
-    console.log('isModalOpen: ', isModalOpen);
-  };
+      setModalOpen(!isModalOpen);
+      setScrollDisabled(!isModalOpen);
+    }
+
+  // debugging modal window not closing while on root page
+  useEffect(() => {
+    console.log('Current state of isModalOpen:', isModalOpen);
+  }, [isModalOpen]);
 
   // useEffect logic to reset state when user resizes window
   useEffect(() => {
@@ -51,7 +55,7 @@ export default function Navbar() {
       // Enable scrolling
       document.body.style.overflow = 'auto';
     }
-  
+
     return () => {
       // Clean up the effect
       document.body.style.overflow = 'auto';
@@ -59,7 +63,7 @@ export default function Navbar() {
   }, [isScrollDisabled]);
 
   return (
-    <nav className="flex flex-col items-center tracking-widest sm:flex-row sm:justify-between sm:pr-10 z-50">
+    <nav className="flex flex-col items-center tracking-widest sm:flex-row sm:justify-between sm:pr-10">
       <StaticImage
         src="../images/noahDots.png"
         alt="Bedroom"
@@ -68,10 +72,10 @@ export default function Navbar() {
         formats={['auto', 'webp', 'avif']}
         loading='eager'
         placeholder='none'
-        className={isModalOpen ? 'z-modal-open' : ''}
+        className="z-50"
       />
       {isIcon ? (
-        <div className={isModalOpen ? 'z-modal-open' : ''}>
+        <div className="z-50">
           <FontAwesomeIcon
             icon={isBarsVisible ? faBars : faXmark}
             className="text-black transition-opacity duration-500"
@@ -86,9 +90,9 @@ export default function Navbar() {
           <Link to="/contact" className="hover:underline">Contact</Link>
         </div>
       )}
-      {isModalOpen && (
+        {/* fade in modal solution instead of removing it entirely */}
         <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 font-uni tracking-widest text-3xl z-10" onClick={handleClick}>
-          <div className="bg-white p-4 w-screen h-screen flex flex-col items-center justify-center" onClick={handleModalClick}>
+          <div className={`bg-white p-4 w-screen h-screen flex flex-col items-center justify-center transition-opacity duration-500 ${isModalOpen ? 'opacity-100' : 'opacity-0'}`} onClick={handleModalClick}>
             <Link to="/" className="block my-2 hover:underline">
               Music
             </Link>
@@ -100,7 +104,6 @@ export default function Navbar() {
             </Link>
           </div>
         </div>
-      )}
     </nav>
   );
 }

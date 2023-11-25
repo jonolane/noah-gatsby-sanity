@@ -60,7 +60,7 @@ const Discography = () => {
       });
 
       setSortedReleases(sortedReleases);
-      console.log('Sorted releases:', sortedReleases);
+      // console.log('Sorted releases:', sortedReleases);
     };
 
     fetchReleases();
