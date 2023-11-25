@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, navigate } from 'gatsby';
+import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +12,7 @@ export default function Navbar() {
 
   const handleClick = () => {
     const currentPage = window.location.pathname;
-  
+
     if ((currentPage === '/' || currentPage === '/discography' || currentPage === '/contact') && isModalOpen) {
       // Close the modal if page Link is clicked and already on the same page
       setModalOpen(false);
@@ -70,7 +70,7 @@ export default function Navbar() {
   const handleSocialClick = (url) => {
     window.open(url, '_blank');
     console.log(url);
-};
+  };
 
   return (
     <nav className="flex flex-col items-center tracking-widest sm:flex-row sm:justify-between sm:pr-10">
@@ -82,10 +82,10 @@ export default function Navbar() {
         formats={['auto', 'webp', 'avif']}
         loading='eager'
         placeholder='none'
-        className="z-50"
+        className="z-30"
       />
       {isIcon ? (
-        <div className="z-50">
+        <div className="z-30">
           <FontAwesomeIcon
             icon={isBarsVisible ? faBars : faXmark}
             className="text-black transition-opacity duration-500"
@@ -100,12 +100,11 @@ export default function Navbar() {
           <Link to="/contact" className="hover:underline">Contact</Link>
         </div>
       )}
-        
-        {/* modal view */}
-        <div className={`fixed inset-0 flex items-center justify-center bg-opacity-50 font-uni tracking-widest text-5xl z-10 ${
-          isModalOpen ? 'pointer-events-auto' : 'pointer-events-none'
+
+      {/* modal view */}
+      <div className={`fixed inset-0 flex items-center justify-center bg-opacity-50 font-uni tracking-widest text-5xl z-10 ${isModalOpen ? 'pointer-events-auto' : 'pointer-events-none'
         }`}>
-          <div className={`bg-white p-4 w-screen h-screen flex flex-col items-center justify-center transition-opacity duration-500 ${isModalOpen ? 'opacity-100' : 'opacity-0'}`} onClick={handleModalClick}>
+        <div className={`bg-white p-4 w-screen h-screen flex flex-col items-center justify-center transition-opacity duration-500 ${isModalOpen ? 'opacity-100' : 'opacity-0'}`} onClick={handleModalClick}>
 
           {/* if modal starts bugging, try removing these two child divs and let the footer icons rest right below */}
 
@@ -119,8 +118,8 @@ export default function Navbar() {
             <Link to="/contact" className="block my-3 hover:underline" onClick={handleClick}>
               Contact
             </Link>
-            </div>
-            <div className='mt-auto'>
+          </div>
+          <div className='mt-auto'>
             <div className=" space-x-6">
               <FontAwesomeIcon
                 icon={faInstagram}
@@ -138,9 +137,9 @@ export default function Navbar() {
                 onClick={() => handleSocialClick("https://www.youtube.com/@bedroomofficial/about")}
               />
             </div>
-            </div>
           </div>
         </div>
+      </div>
     </nav>
   );
 }

@@ -16,13 +16,6 @@ module.exports = {
           50: '#fcfcfc'
         }
       },
-      // modal window specific styles
-      zIndex: {
-        'modal-open': 50,
-      },
-      maxHeight: {
-        'modal-open': 'calc(100vh - 6rem)',
-      },
     },
   },
   plugins: [],

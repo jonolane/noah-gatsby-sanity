@@ -147,60 +147,38 @@ export default function Layout({ children }) {
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import LoadingPlaceholder from './LoadingPlaceholder';
 
 export default function Layout({ children }) {
-  const [isContentLoaded, setContentLoaded] = useState(false);
-  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const [showFooter, setShowFooter] = useState(false);
 
   useEffect(() => {
-    let isMounted = true;
+    const timer = setTimeout(() => {
+      setShowFooter(true);
+    }, 600); // Adjust the delay (in milliseconds) as per your requirement
 
-    const handleContentRender = async () => {
-      // Simulate an asynchronous operation to fetch data or perform any other tasks
-      await new Promise((resolve) => setTimeout(resolve, 200));
-
-      if (isMounted) {
-        setContentLoaded(true);
-      }
-    };
-
-    // console.log('isInitialLoad:', isInitialLoad);
-
-    handleContentRender();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [isInitialLoad]);
-
-  useEffect(() => {
-    setIsInitialLoad(false);
+    return () => clearTimeout(timer);
   }, []);
-
-  // console.log('Rendering Layout');
 
   return (
     <div className="layout bg-white text-black">
       <head>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-      <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet" />
 
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-      <link href="https://fonts.googleapis.com/css2?family=Kalam&family=UnifrakturMaguntia&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link href="https://fonts.googleapis.com/css2?family=Kalam&family=UnifrakturMaguntia&display=swap" rel="stylesheet" />
 
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet" />
       </head>
       <Navbar />
       <div className="content">
-        {!isContentLoaded && <LoadingPlaceholder />}
-        {isContentLoaded && children}
+        {children}
       </div>
-      <Footer />
+      {showFooter && <Footer />}
     </div>
   );
 }

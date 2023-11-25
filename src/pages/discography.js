@@ -90,7 +90,7 @@ const Discography = () => {
 
   return (
     <Layout>
-      <div className='font-poppins tracking-wider px-10 py-6'>
+      <div className='font-poppins tracking-wider px-10 py-6 '>
         {sortedReleases.map((release, index) => {
           const currentYear = new Date(release.releaseDate).getFullYear();
           const previousRelease = sortedReleases[index - 1];
