@@ -1,6 +1,5 @@
-// handle modal click solution
 import React, { useState, useEffect } from 'react';
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +11,6 @@ export default function Navbar() {
 
   const handleClick = () => {
     const currentPage = window.location.pathname;
-    console.log('Current page:', currentPage);
   
     if ((currentPage === '/' || currentPage === '/discography' || currentPage === '/contact') && isModalOpen) {
       // Close the modal if page Link is clicked and already on the same page
@@ -89,14 +87,16 @@ export default function Navbar() {
           />
         </div>
       ) : (
-        <div className="links text-xl font-uni pt-1">
+        <div className="text-xl font-uni pt-1">
           <Link to="/" className="mr-6 hover:underline">Music</Link>
           <Link to="/discography" className="mr-6 hover:underline">Discography</Link>
           <Link to="/contact" className="hover:underline">Contact</Link>
         </div>
       )}
-        {/* fade in modal solution instead of removing it entirely */}
-        <div className="fixed inset-0 flex items-center justify-center bg-opacity-50 font-uni tracking-widest text-3xl z-10" onClick={handleClick}>
+        
+        <div className={`fixed inset-0 flex items-center justify-center bg-opacity-50 font-uni tracking-widest text-3xl z-10 ${
+          isModalOpen ? 'pointer-events-auto' : 'pointer-events-none'
+        }`}>
           <div className={`bg-white p-4 w-screen h-screen flex flex-col items-center justify-center transition-opacity duration-500 ${isModalOpen ? 'opacity-100' : 'opacity-0'}`} onClick={handleModalClick}>
             <Link to="/" className="block my-2 hover:underline" onClick={handleClick}>
               Music
