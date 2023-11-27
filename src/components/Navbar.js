@@ -1,14 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
+// import global context for initial load
+import { AppContext } from '../utils/AppContext';
+
 export default function Navbar() {
   const [isIcon, setIcon] = useState(false);
   const [isModalOpen, setModalOpen] = useState(false);
   const [isScrollDisabled, setScrollDisabled] = useState(false);
+
+  // get and set global context variable for initial load
+  const appContext = useContext(AppContext);
+  const { isInitialLoad, setInitialLoad } = appContext;
 
   const handleClick = () => {
     const currentPage = window.location.pathname;
@@ -71,6 +78,23 @@ export default function Navbar() {
     window.open(url, '_blank');
     console.log(url);
   };
+
+  // open modal window ONLY if it's the inital load use React context
+  // could switch to gatsby browswer api functions if manual "inital load" function starts to bug
+  // gatsby browser api docs: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
+  // "onClienEntry" or "onInitialRender" for example ^^^^
+  // could also go the route of making an entire context theme for inital load mobile view
+  useEffect(() => { 
+    const handleInitialLoad = () => {
+      if (window.innerWidth <= 640 && isInitialLoad) {
+        setModalOpen(true);
+        setScrollDisabled(true);
+      }
+    }
+
+    handleInitialLoad();
+    setInitialLoad(false); // reset global context
+}, [isInitialLoad, setInitialLoad]);
 
   return (
     <nav className="flex flex-col items-center tracking-widest sm:flex-row sm:justify-between sm:pr-10">
