@@ -1,5 +1,4 @@
-// pausing on the fade-down animation until the gatsby build bug is fixed
-/*
+// testing fade up and fade down animations 
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -119,7 +118,7 @@ useEffect(() => {
         <div className="z-30">
           <FontAwesomeIcon
             icon={isBarsVisible ? faBars : faXmark}
-            className="text-black"
+            className="text-black transition-opacity duration-500"
             size="2x"
             onClick={handleClick}
           />
@@ -132,14 +131,15 @@ useEffect(() => {
         </div>
       )}
 
-      // modal view 
-      <div className={`fixed inset-0 flex items-center justify-center font-uni tracking-widest text-5xl z-10 ${isModalOpen ? 'pointer-events-auto' : 'pointer-events-none'
+      {/* modal view */}
+      <div className={`fixed inset-0 flex items-center justify-center bg-opacity-50 font-uni tracking-widest text-5xl z-10 ${isModalOpen ? 'pointer-events-auto' : 'pointer-events-none'
         }`}>
-        <div className={`bg-white p-4 w-screen h-screen flex flex-col items-center justify-center transition-opacity ${isModalOpen ? 'animate-duration-500 animate-fade-up' : 'duration-500 opacity-0'}`} onClick={handleModalClick}>
+        <div className={`bg-white p-4 w-screen h-screen flex flex-col items-center justify-center transition-opacity duration-500 ${isModalOpen ? 'opacity-100' : 'opacity-0'}`} onClick={handleModalClick}>
 
-          // if modal starts bugging, try removing these two child divs and let the footer icons rest right below 
+          {/* if modal starts bugging, try removing these two child divs and let the footer icons rest right below */}
 
-          <div className="flex flex-col justify-center items-center h-full">
+          {/* using mt-20 here to force my <Links> center. simply could no other way */}
+          <div className={`flex flex-col justify-center items-center h-full mt-20 transition ease-in-out duration-500 translate-y-4 ${isModalOpen ? '-translate-y-4' : ''}`}>
             <Link to="/" className="block my-3 hover:underline" onClick={handleClick}>
               Music
             </Link>
@@ -150,7 +150,7 @@ useEffect(() => {
               Contact
             </Link>
           </div>
-          <div className="mt-auto">
+          <div className={`mt-auto transition ease-in-out duration-500 translate-y-4 ${isModalOpen ? '-translate-y-4' : ''}`}>
             <div className=" space-x-6">
               <FontAwesomeIcon
                 icon={faInstagram}
@@ -174,9 +174,9 @@ useEffect(() => {
     </nav>
   );
 }
-*/
 
 // working well but doesn't have the fade up animation
+/*
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -275,11 +275,9 @@ export default function Navbar() {
     setInitialLoad(false); // reset global context
   }, [isInitialLoad, setInitialLoad]);
 
-  /*
   useEffect(() => {
     console.log('isInitialLoad: ', isInitialLoad);
   }, [isInitialLoad]);
-*/
 
   return (
     <nav className="flex flex-col items-center tracking-widest sm:flex-row sm:justify-between sm:pr-10">
@@ -310,12 +308,12 @@ export default function Navbar() {
         </div>
       )}
 
-      {/*} modal view */}
+      // modal view
       <div className={`fixed inset-0 flex items-center justify-center bg-opacity-50 font-uni tracking-widest text-5xl z-10 ${isModalOpen ? 'pointer-events-auto' : 'pointer-events-none'
         }`}>
         <div className={`bg-white p-4 w-screen h-screen flex flex-col items-center justify-center transition-opacity duration-500 ${isModalOpen ? 'opacity-100' : 'opacity-0'}`} onClick={handleModalClick}>
 
-          {/*} if modal starts bugging, try removing these two child divs and let the footer icons rest right below */}
+          // if modal starts bugging, try removing these two child divs and let the footer icons rest right below 
 
           <div className="flex flex-col justify-center items-center h-full">
             <Link to="/" className="block my-3 hover:underline" onClick={handleClick}>
@@ -352,6 +350,7 @@ export default function Navbar() {
     </nav>
   );
 }
+*/
 
 // modal window won't close
 /*
