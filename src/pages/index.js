@@ -14,7 +14,11 @@ export default function Home() {
 
   // get and set global context variable for initial load
   const appContext = useContext(AppContext);
-  const { setInitialLoad } = appContext;
+  const { setInitialLoad, isStopHomeAnimation, setStopHomeAnimation } = appContext;
+
+  console.log('Initial isLoaded:', isLoaded);
+  console.log('Initial animationComplete:', animationComplete);
+  console.log('Initial isStopHomeAnimation:', isStopHomeAnimation);
 
   useEffect(() => {
     const hasInitialLoadOccurred = sessionStorage.getItem('hasInitialLoadOccurred');
@@ -34,6 +38,9 @@ export default function Home() {
     } else {
       setIsLoaded(false);
       setAnimationComplete(true);
+
+      // end it already
+      setStopHomeAnimation(true);
     }
   }, []);
 
@@ -41,10 +48,12 @@ export default function Home() {
     window.open(url, '_blank');
   };
 
+  /*
   useEffect(() => {
-    console.log('isLoaded: ', isLoaded);
-    console.log('animationComplete: ', animationComplete);
-  }, []);
+    console.log('updated isLoaded: ', isLoaded);
+    console.log('updated animationComplete: ', animationComplete);
+  }, [isLoaded, animationComplete]);
+  */
 
   return (
     <>
@@ -63,11 +72,11 @@ export default function Home() {
       </div>
 
       {/* removing these comments gets rid of fade in animation for container */}
-      {/*}
+      {/*
       {animationComplete && (
       */}
 
-      <div className={`${animationComplete ? 'opacity-100 transition-opacity duration-1000' : 'opacity-0'}`}>
+<div className={`${animationComplete && !isStopHomeAnimation ? 'opacity-100 transition-opacity duration-1000' : (animationComplete || isStopHomeAnimation ? 'opacity-100' : 'opacity-0')}`}>
 
       <Layout>
         <section className="flex flex-col items-center justify-center font-poppins tracking-wider">
@@ -86,7 +95,7 @@ export default function Home() {
 
       </div>
 
-      {/*}
+      {/*
       )}
       */}
 

@@ -275,9 +275,11 @@ export default function Navbar() {
     setInitialLoad(false); // reset global context
   }, [isInitialLoad, setInitialLoad]);
 
+  /*
   useEffect(() => {
     console.log('isInitialLoad: ', isInitialLoad);
   }, [isInitialLoad]);
+*/
 
   return (
     <nav className="flex flex-col items-center tracking-widest sm:flex-row sm:justify-between sm:pr-10">
