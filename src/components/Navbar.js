@@ -139,7 +139,7 @@ useEffect(() => {
           {/* if modal starts bugging, try removing these two child divs and let the footer icons rest right below */}
 
           {/* using mt-20 here to force my <Links> center. simply could no other way */}
-          <div className={`flex flex-col justify-center items-center h-full mt-20 transition ease-in-out duration-500 translate-y-4 ${isModalOpen ? '-translate-y-4' : ''}`}>
+          <div className={`flex flex-col justify-center items-center h-full mt-28 transition ease-in-out duration-500 ${isModalOpen ? '-translate-y-0' : 'translate-y-6'}`}>
             <Link to="/" className="block my-3 hover:underline" onClick={handleClick}>
               Music
             </Link>
@@ -150,7 +150,7 @@ useEffect(() => {
               Contact
             </Link>
           </div>
-          <div className={`mt-auto transition ease-in-out duration-500 translate-y-4 ${isModalOpen ? '-translate-y-4' : ''}`}>
+          <div className={`mt-auto mb-6 transition ease-in-out duration-500 ${isModalOpen ? '-translate-y-0' : 'translate-y-6'}`}>
             <div className=" space-x-6">
               <FontAwesomeIcon
                 icon={faInstagram}
