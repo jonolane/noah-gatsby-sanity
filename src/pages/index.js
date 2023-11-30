@@ -65,7 +65,8 @@ export default function Home() {
           width={500}
           quality={95}
           formats={['auto', 'webp', 'avif']}
-          loading='eager'
+          // loading='eager'
+          loading='lazy'
           placeholder='none'
           className="animate-pulse"
         />
