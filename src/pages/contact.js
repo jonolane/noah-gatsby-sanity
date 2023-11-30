@@ -75,7 +75,7 @@ const Contact = () => {
             </div>
 
             {/* Notes Textarea */}
-            <div className="mb-7">
+            <div className="mb-5">
               <label htmlFor="notes" className="block text-sm pb-2">Notes (required)</label>
               <textarea
                 id="notes"
@@ -94,7 +94,7 @@ const Contact = () => {
         </div>
 
         {/* Image Section */}
-        <div className='flex flex-col items-center pb-6'>
+        <div className='flex flex-col items-center'>
           <StaticImage
             src="../images/noahStudio.jpg"
             alt="Bedroom"
