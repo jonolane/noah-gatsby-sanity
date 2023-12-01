@@ -15,6 +15,10 @@ if (process.env.NODE_ENV !== "production") {
 }
 */
 
+require('dotenv').config({
+  path: process.env.NODE_ENV === 'Production' ? '.env.production' : '.env.development',
+});
+
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
