@@ -12,7 +12,7 @@ const Contact = () => {
           {/* Web3Forms */}
           <form className="bg-white p-6 rounded-none tracking-wider" action='https://api.web3forms.com/submit' method='POST'>
             {/* Access Key */}
-            <input type="hidden" name='access_key' value={process.env.WEB3FORMS_ACCESS_KEY} />
+            <input type="hidden" name='access_key' value={process.env.GATSBY_WEB3FORMS_ACCESS_KEY} />
             {/* Name Input */}
             <div className="mb-5">
               <label htmlFor="name" className="block text-sm pb-2">Name (required)</label>
