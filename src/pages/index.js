@@ -38,22 +38,14 @@ export default function Home() {
     } else {
       setIsLoaded(false);
       setAnimationComplete(true);
-
-      // end it already
       setStopHomeAnimation(true);
     }
   }, []);
 
+  // spotify link in new tab
   const handleCardClick = (url) => {
     window.open(url, '_blank');
   };
-
-  /*
-  useEffect(() => {
-    console.log('updated isLoaded: ', isLoaded);
-    console.log('updated animationComplete: ', animationComplete);
-  }, [isLoaded, animationComplete]);
-  */
 
   return (
     <>
