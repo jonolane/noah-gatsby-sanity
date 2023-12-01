@@ -4,9 +4,8 @@ import Layout from '../components/Layout'
 const NotFound = () => {
   return (
     <Layout>
-      <div>
-        <h2>404</h2>
-        <p>Sorry, that page doesn't exist (yet)!</p>
+      <div className='bg-black w-full h-full flex flex-col items-center justify-center'>
+        <h1 className='font-uni tracking-widest'>404</h1>
       </div>
     </Layout>
   );
