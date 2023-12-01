@@ -1,8 +1,11 @@
 const SpotifyWebApi = require('spotify-web-api-js');
 
 // explicitly setting for vercel to use for staging environment
-const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
-const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
+const CLIENT_ID = process.env.GATSBY_SPOTIFY_CLIENT_ID;
+const CLIENT_SECRET = process.env.GATSBY_SPOTIFY_CLIENT_SECRET;
+
+console.log('CLIENT_ID:', CLIENT_ID);
+console.log('CLIENT_SECRET:', CLIENT_SECRET);
 
 async function authenticate() {
   const api = new SpotifyWebApi();
