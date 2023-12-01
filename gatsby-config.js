@@ -4,9 +4,13 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
 
+/*
 require('dotenv').config({
-  path: process.env.NODE_ENV === 'Production' ? '.env.production' : '.env.development',
+  path: process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development',
 });
+*/
+
+require('dotenv').config();
 
 /**
  * @type {import('gatsby').GatsbyConfig}
