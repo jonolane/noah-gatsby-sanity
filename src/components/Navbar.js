@@ -175,7 +175,7 @@ export default function Navbar() {
   );
 }
 
-// without fragments
+// without fragments. this one doesn't seem to have the intial load view flicker so switch if you need to
 /*
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'gatsby';

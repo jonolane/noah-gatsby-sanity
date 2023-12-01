@@ -1,14 +1,8 @@
 const SpotifyWebApi = require('spotify-web-api-js');
 
-// will want to change this to production environment variables, in order to hide from public repo
-/* 
-const CLIENT_ID = process.env.GATSBY_SPOTIFY_CLIENT_ID;
-const CLIENT_SECRET = process.env.GATSBY_SPOTIFY_CLIENT_SECRET;
-*/
-
 // explicitly setting for vercel to use for staging environment
-const CLIENT_ID = 'd4d80ce37254416a8a1bd23ffb4681ea';
-const CLIENT_SECRET = '395ec27481fe4de0ad5d8939d7aba84e';
+const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID;
+const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET;
 
 async function authenticate() {
   const api = new SpotifyWebApi();

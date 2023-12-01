@@ -4,14 +4,16 @@
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
  */
 
-require("dotenv").config()
+require('dotenv').config({
+  path: process.env.NODE_ENV === 'production' ? '.env.production' : '.env.development',
+});
 
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
   siteMetadata: {
-    title: 'My Gatsby Site',
+    title: 'Noah Kittinger',
   },
   plugins: [
     'gatsby-plugin-sharp',
@@ -19,12 +21,12 @@ module.exports = {
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: 'h9sl2tbd',
-        dataset: 'production',
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
       },
     },
     {
-      resolve: 'gatsby-source-filesystem', // using for static about and contact images
+      resolve: 'gatsby-source-filesystem', // using for static contact images
       options: {
         name: 'images',
         path: `${__dirname}/src/images/`,
