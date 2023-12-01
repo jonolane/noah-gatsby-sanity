@@ -6,11 +6,14 @@
 
 // require('dotenv').config();
 
+// uncomment to make dev vars work again 
+/*
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config({
     path: ".env.development",
   });
 }
+*/
 
 /**
  * @type {import('gatsby').GatsbyConfig}
