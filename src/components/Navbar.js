@@ -1,3 +1,4 @@
+/*
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -131,13 +132,13 @@ export default function Navbar() {
         )}
       </React.Fragment>
 
-      {/* modal view */}
+      {/* modal view 
       <React.Fragment>
         <div className={`fixed inset-0 flex items-center justify-center bg-opacity-50 font-uni tracking-widest text-5xl z-10 ${isModalOpen ? 'pointer-events-auto' : 'pointer-events-none'
           }`}>
           <div className={`bg-white p-4 w-screen h-screen flex flex-col items-center justify-center transition-opacity duration-500 ${isModalOpen ? 'opacity-100' : 'opacity-0'}`} onClick={handleModalClick}>
-            {/* if modal starts bugging, try removing these two child divs and let the footer icons rest right below */}
-            {/* using mt-20 here to force my <Links> center. simply could no other way  */}
+            {/* if modal starts bugging, try removing these two child divs and let the footer icons rest right below 
+            {/* using mt-20 here to force my <Links> center. simply could no other way  
             <div className={`flex flex-col justify-center items-center h-full mt-28 transition ease-in-out duration-500 ${isModalOpen ? '-translate-y-0' : 'translate-y-6'}`}>
               <Link to="/" className="block my-3 hover:underline" onClick={handleClick}>
                 Music
@@ -174,9 +175,9 @@ export default function Navbar() {
     </nav>
   );
 }
+*/
 
 // without fragments. this one doesn't seem to have the intial load view flicker so switch if you need to
-/*
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
@@ -310,14 +311,14 @@ useEffect(() => {
         </div>
       )}
 
-      {/* modal view 
+      {/* modal view */}
       <div className={`fixed inset-0 flex items-center justify-center bg-opacity-50 font-uni tracking-widest text-5xl z-10 ${isModalOpen ? 'pointer-events-auto' : 'pointer-events-none'
         }`}>
         <div className={`bg-white p-4 w-screen h-screen flex flex-col items-center justify-center transition-opacity duration-500 ${isModalOpen ? 'opacity-100' : 'opacity-0'}`} onClick={handleModalClick}>
 
-          {/* if modal starts bugging, try removing these two child divs and let the footer icons rest right below 
+          {/* if modal starts bugging, try removing these two child divs and let the footer icons rest right below */}
 
-          {/* using mt-20 here to force my <Links> center. simply could no other way 
+          {/* using mt-20 here to force my <Links> center. simply could no other way */}
           <div className={`flex flex-col justify-center items-center h-full mt-28 transition ease-in-out duration-500 ${isModalOpen ? '-translate-y-0' : 'translate-y-6'}`}>
             <Link to="/" className="block my-3 hover:underline" onClick={handleClick}>
               Music
@@ -353,7 +354,7 @@ useEffect(() => {
     </nav>
   );
 }
-*/
+
 
 /*
 // fade up and fade down animations 
