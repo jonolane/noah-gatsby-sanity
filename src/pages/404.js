@@ -11,7 +11,7 @@ const NotFound = () => {
             top: `${Math.random() * 100}vh`,
             left: `${Math.random() * 100}vw`,
             animationDelay: `${index * 0.1}s`,
-            animationDuration: '0.8s',
+            animationDuration: '1s',
           }}
         >
           404
