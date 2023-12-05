@@ -4,6 +4,8 @@ import Layout from '../components/Layout';
 import Card from '../components/Card';
 import { useAlbums } from '../utils/displayController';
 
+// trying PAT
+
 // import global context for inital load
 import { AppContext } from '../utils/AppContext';
 
