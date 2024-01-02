@@ -9,7 +9,9 @@ module.exports = {
       fontFamily: {
         kalam: ['Kalam', 'Kalam'],
         uni: ['UnifrakturMaguntia', 'UnifrakturMaguntia'],
-        poppins: ['Poppins', 'Poppins']
+        poppins: ['Poppins', 'Poppins'],
+        // woff and woff2
+        noah: ['noah', 'noah']
       },
       colors: {
         gray: {

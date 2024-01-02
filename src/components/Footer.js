@@ -17,8 +17,9 @@ export default function Footer() {
                     <FontAwesomeIcon icon={faTwitter} className='text-2xl text-black cursor-pointer' onClick={() => handleCardClick("https://twitter.com/noah_kittinger")} />
                     <FontAwesomeIcon icon={faYoutube} className='text-2xl text-black cursor-pointer' onClick={() => handleCardClick("https://www.youtube.com/@bedroomofficial/about")} />
                 </div>
-                {/*<p className="font-semibold text-center font-uni text-lg">✨ Created with 💗 by Jono Lane ✨</p> */}
-                <p className="font-semibold text-center tracking-widest font-uni text-lg">© 2023 Noah Kittinger</p>
+                {/* <p className="font-semibold text-center tracking-widest font-uni text-lg">© 2023 Noah Kittinger</p> */}
+                <p className="text-center tracking-widest font-noah lowercase"><span className='text-base font-extrabold'>© 2024</span> <span className='text-3xl font-thin'>Noah Kittinger</span></p> 
+
             </div>
         </footer>
     )

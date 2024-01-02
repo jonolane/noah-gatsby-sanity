@@ -304,15 +304,17 @@ useEffect(() => {
           />
         </div>
       ) : (
-        <div className="text-xl font-uni pt-1">
+        /* old styles for font-uni */
+        /*<div className="font-uni text-xl pt-1">*/
+        <div className="text-4xl font-noah lowercase pb-1">
           <Link to="/" className="mr-6 hover:underline">Music</Link>
           <Link to="/discography" className="mr-6 hover:underline">Discography</Link>
           <Link to="/contact" className="hover:underline">Contact</Link>
         </div>
       )}
 
-      {/* modal view */}
-      <div className={`fixed inset-0 flex items-center justify-center bg-opacity-50 font-uni tracking-widest text-5xl z-10 ${isModalOpen ? 'pointer-events-auto' : 'pointer-events-none'
+      {/* modal view */} {/* old font styles are font-uni and text-5xl */}
+      <div className={`fixed inset-0 flex items-center justify-center bg-opacity-50 font-noah lowercase tracking-widest text-6xl z-10 ${isModalOpen ? 'pointer-events-auto' : 'pointer-events-none'
         }`}>
         <div className={`bg-white p-4 w-screen h-screen flex flex-col items-center justify-center transition-opacity duration-500 ${isModalOpen ? 'opacity-100' : 'opacity-0'}`} onClick={handleModalClick}>
 
