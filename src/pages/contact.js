@@ -9,7 +9,7 @@ const Contact = () => {
         <h1 className='text-xl mb-4 text-center'>Producer / Musician / Engineer</h1>
         {/* Form Section */}
         <div className="p-4 mb-2 w-full mx-auto max-w-screen-lg">
-          {/* Web3Forms */}
+          {/* Web3Forms new access */}
           <form className="bg-white p-6 rounded-none tracking-wider" action='https://api.web3forms.com/submit' method='POST'>
             {/* Access Key */}
             <input type="hidden" name='access_key' value={process.env.GATSBY_WEB3FORMS_ACCESS_KEY} />
