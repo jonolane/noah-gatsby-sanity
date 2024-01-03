@@ -6,7 +6,7 @@ const NotFound = () => {
       {Array.from({ length: 50 }, (_, index) => (
         <h1
           key={index}
-          className="text-black text-9xl absolute animate-pulse"
+          className="text-black font-noah text-9xl absolute animate-pulse"
           style={{
             top: `${Math.random() * 100}vh`,
             left: `${Math.random() * 100}vw`,

@@ -4,9 +4,6 @@ const SpotifyWebApi = require('spotify-web-api-js');
 const CLIENT_ID = process.env.GATSBY_SPOTIFY_CLIENT_ID;
 const CLIENT_SECRET = process.env.GATSBY_SPOTIFY_CLIENT_SECRET;
 
-console.log('CLIENT_ID:', CLIENT_ID);
-console.log('CLIENT_SECRET:', CLIENT_SECRET);
-
 async function authenticate() {
   const api = new SpotifyWebApi();
 
