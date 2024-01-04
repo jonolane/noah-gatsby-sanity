@@ -4,14 +4,13 @@ import Layout from '../components/Layout';
 import Card from '../components/Card';
 import { useAlbums } from '../utils/displayController';
 
-// trying PAT
-
 // import global context for inital load
 import { AppContext } from '../utils/AppContext';
 
 export default function Home() {
   const albums = useAlbums();
-  const [isLoaded, setIsLoaded] = useState(true);
+  // setting isLoaded to true within hasInitialLoadOccurred instead of here to avoid dot flicker on navigation
+  const [isLoaded, setIsLoaded] = useState(false);
   const [animationComplete, setAnimationComplete] = useState(false);
 
   // get and set global context variable for initial load
@@ -26,6 +25,9 @@ export default function Home() {
     const hasInitialLoadOccurred = sessionStorage.getItem('hasInitialLoadOccurred');
 
     if (!hasInitialLoadOccurred) {
+      // setting before the timer for one time dot render
+      setIsLoaded(true);
+
       const timer = setTimeout(() => {
         setIsLoaded(false);
         sessionStorage.setItem('hasInitialLoadOccurred', 'true');
