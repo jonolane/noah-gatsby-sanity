@@ -3,8 +3,6 @@ import { StaticImage } from 'gatsby-plugin-image';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 import { useAlbums } from '../utils/displayController';
-
-// import global context for inital load
 import { AppContext } from '../utils/AppContext';
 
 export default function Home() {
@@ -17,9 +15,11 @@ export default function Home() {
   const appContext = useContext(AppContext);
   const { setInitialLoad, isStopHomeAnimation, setStopHomeAnimation } = appContext;
 
+  /*
   console.log('Initial isLoaded:', isLoaded);
   console.log('Initial animationComplete:', animationComplete);
   console.log('Initial isStopHomeAnimation:', isStopHomeAnimation);
+  */
 
   useEffect(() => {
     const hasInitialLoadOccurred = sessionStorage.getItem('hasInitialLoadOccurred');
@@ -33,14 +33,15 @@ export default function Home() {
         sessionStorage.setItem('hasInitialLoadOccurred', 'true');
         setAnimationComplete(true);
 
-        // here's where I want to try to set a global variable to true 
+        // global variable to true 
         setInitialLoad(true);
 
-      }, 2500); // Replace this with your actual loading logic.
+      }, 2500); // custom logic?
 
       return () => clearTimeout(timer);
     } else {
-      setIsLoaded(false);
+      // redundent to set isLoaded to false here?
+      // setIsLoaded(false);
       setAnimationComplete(true);
       setStopHomeAnimation(true);
     }
