@@ -40,7 +40,7 @@ export default function Home() {
 
       return () => clearTimeout(timer);
     } else {
-      // redundent to set isLoaded to false here?
+      // redundent to set isLoaded to false here
       // setIsLoaded(false);
       setAnimationComplete(true);
       setStopHomeAnimation(true);
@@ -62,14 +62,13 @@ export default function Home() {
           width={500}
           quality={95}
           formats={['auto', 'webp', 'avif']}
-          // loading='eager'
           loading='lazy'
           placeholder='none'
           className="animate-pulse"
         />
       </div>
 
-      {/* removing these comments gets rid of fade in animation for container */}
+      {/* remove these comments gets rid of fade in animation for container */}
       {/*
       {animationComplete && (
       */}

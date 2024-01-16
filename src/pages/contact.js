@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <Layout>
       <div className="flex flex-col items-center px-4 py-6 font-poppins">
-        <h1 className='text-xl mb-4 text-center'>Producer / Musician / Engineer</h1>
+        <h1 className='text-xl mb-4 text-center mx-6'>Producer / Musician / Audio Engineer</h1>
         {/* Form Section */}
         <div className="p-4 mb-2 w-full mx-auto max-w-screen-lg">
           {/* Web3Forms new access */}

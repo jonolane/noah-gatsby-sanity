@@ -96,23 +96,25 @@ export default function Navbar() {
     setInitialLoad(false); // reset global context
 }, [isInitialLoad, setInitialLoad]);
 
+/*
 useEffect(() => {
   console.log('isModalOpen: ', isModalOpen);
   console.log('isInitialLoad: ', isInitialLoad);  
 }, [isModalOpen]);
+*/
 
   return (
     <nav className="flex items-center tracking-widest sm:flex-row justify-between pr-10">
-
+      {/* former width 500 no padding or margin */}
         <StaticImage
           src="../images/noahDots.png"
           alt="Bedroom"
-          width={500}
+          width={400}
           quality={95}
           formats={['auto', 'webp', 'avif']}
           loading='eager'
           placeholder='none'
-          className="z-30"
+          className="z-30 m-4"
         />
               {isIcon ? (
         <div className="z-30 flex items-center justify-center">
@@ -351,24 +353,5 @@ export default function Navbar() {
       </div>
     </nav>
   );
-}
-*/
-
-// name instead of logo route
-/* 
-import React from 'react'
-import { Link } from 'gatsby'
-
-export default function Navbar() {
-  return (
-    <nav className="p-10 flex justify-between items-center tracking-wider">
-      <h1 className="text-4xl font-semibold font-uni">Noah Kittinger</h1>
-      <div className="links text-lg font-kalam">
-        <Link to="/" className="mr-6 hover:underline">Music</Link>
-        <Link to="/discography" className="mr-6 hover:underline">Discography</Link>
-        <Link to="/contact" className="hover:underline">Contact</Link>
-      </div>
-    </nav>
-  )
 }
 */
