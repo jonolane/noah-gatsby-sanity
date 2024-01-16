@@ -28,6 +28,16 @@ export default function Layout({ children }) {
 
 export const Head = () => (
   <>
+    {/* open graph tags for SEO */}
+    <meta name="image" property="og:image" content="https://noahkittinger.co/preview.png" />
+    <meta name="title" property="og:title" content="Noah Kittinger" />
+    <meta name="description" property="og:description" content="Producer / Musician / Audio Engineer" />
+
+    {/* twitter card */}
+    <meta name="twitter:card" property="twitter:card" content="https://noahkittinger.co/preview.png" />
+    <meta name="twitter:title" property="twitter:title" content="Noah Kittinger" />
+    <meta name="twitter:description" property="twitter:description" content="Producer / Musician / Audio Engineer" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet" />
