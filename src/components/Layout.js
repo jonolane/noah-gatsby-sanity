@@ -32,9 +32,12 @@ export const Head = () => (
     <meta name="image" property="og:image" content="https://noahkittinger.co/preview.jpg" />
     <meta name="title" property="og:title" content="Noah Kittinger" />
     <meta name="description" property="og:description" content="Producer / Musician / Audio Engineer" />
+    <meta property="og:url" content="https://noahkittinger.co" />
+    <meta property="og:type" content="website" />
 
     {/* twitter card */}
-    <meta name="twitter:card" property="twitter:card" content="https://noahkittinger.co/preview.jpg" />
+    <meta name="twitter:card" property="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://noahkittinger.co/preview.jpg" />
     <meta name="twitter:title" property="twitter:title" content="Noah Kittinger" />
     <meta name="twitter:description" property="twitter:description" content="Producer / Musician / Audio Engineer" />
 
