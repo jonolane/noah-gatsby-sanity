@@ -25,6 +25,10 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Noah Kittinger',
+    siteUrl: `https://noahkittinger.co`,
+    description: `Producer / Musician / Audio Engineer`,
+    twitterUsername: `@noah_kittinger`,
+    image: `https://noahkittinger.co/preview.jpg`,
   },
   plugins: [
     'gatsby-plugin-sharp',

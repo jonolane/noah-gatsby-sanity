@@ -29,12 +29,12 @@ export default function Layout({ children }) {
 export const Head = () => (
   <>
     {/* open graph tags for SEO */}
-    <meta name="image" property="og:image" content="https://noahkittinger.co/preview.png" />
+    <meta name="image" property="og:image" content="https://noahkittinger.co/preview.jpg" />
     <meta name="title" property="og:title" content="Noah Kittinger" />
     <meta name="description" property="og:description" content="Producer / Musician / Audio Engineer" />
 
     {/* twitter card */}
-    <meta name="twitter:card" property="twitter:card" content="https://noahkittinger.co/preview.png" />
+    <meta name="twitter:card" property="twitter:card" content="https://noahkittinger.co/preview.jpg" />
     <meta name="twitter:title" property="twitter:title" content="Noah Kittinger" />
     <meta name="twitter:description" property="twitter:description" content="Producer / Musician / Audio Engineer" />
 
